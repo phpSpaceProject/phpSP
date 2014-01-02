@@ -1,0 +1,4 @@
+phpSP
+=====
+
+new type wargame
