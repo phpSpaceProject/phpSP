@@ -1,0 +1,897 @@
+/*=========================================================
+  _   _                                     
+ | \ | |                                    
+ |  \| | _____  ____ _  __ _ _ __ ___   ___ 
+ | . ` |/ _ \ \/ / _` |/ _` | '_ ` _ \ / _ \
+ | |\  | (_) >  < (_| | (_| | | | | | |  __/
+ |_| \_|\___/_/\_\__, |\__,_|_| |_| |_|\___|
+                  __/ |                     
+                 |___/                                                                             
+ *=========================================================*/
+
+@font-face {
+    font-family: 'opticregular';
+    src: url('../police/optic-webfont.eot');
+    src: url('../police/optic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../police/optic-webfont.woff') format('woff'),
+         url('../police/optic-webfont.ttf') format('truetype'),
+         url('../police/optic-webfont.svg#opticregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	color: #c4c4c4;
+	font-family:Verdana;
+	font-size: 11px;
+	background-image     : url('../images/Games/Fond-Noxgame.jpg');
+	background-color:  #11181e;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+h1
+{
+	font-family: opticregular;/* la police du texte */
+	text-transform : uppercase; /* Le texte en majuscule */
+	text-align:center;
+}
+
+div,table,th,tr,td,span,img,ul,li
+{
+	margin:auto;
+	text-align:center;
+}
+
+ul
+{
+	list-style: none;
+}
+
+img
+{
+	cursor:pointer;
+	/* contour arrondie */
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+}
+
+a,
+a:active,
+a:focus,
+a:hover
+{
+	color:#fff;
+	text-decoration:none;
+}
+
+div.valid_key
+{
+	width:400px;
+	height:35px;
+	font-size: 11px;
+	color:#fff;
+	background :url('../images/Games/img/fond.png');
+	/* ombrage */
+	margin-top:10px;
+	border:1px solid red;
+	text-shadow : 0px 1px 5px red; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+}
+
+div.hauteur,.rapport,div.corp_game,table.box,div.topnav_game,div.news_game,div.admin_game,.mini,div.officier,table.construct,table.construct select,div.footer,table.forum, .description, table.avatar,tr.messages,.quote2s,.tablemenu
+{
+	background :url('../images/Games/img/fond.png');
+	/* ombrage */
+	-webkit-box-shadow : 0px 0px 5px #0b88ea; /* Ajoute de l'ombre sur le contour pour Chrome, Safari */
+	box-shadow : 0px 0px 5px #0b88ea;
+}
+
+.rapport,div.corp_game,table.box,div.topnav_game,div.news_game,div.admin_game,.mini,div.officier,table.construct,table.construct select,table.forum,table.section, .description, table.avatar,tr.messages,.quote2, div.balise,div.valid_key,.tablemenu
+{
+	/* contour arrondie */
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+}
+/* l'image beta */
+img.beta
+{
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+div.banniere
+{
+	width:400px;
+	height:35px;
+	font-size: 11px;
+	background:#fff;
+	color#000;
+}
+
+div.corp_game
+{
+	margin:20px 150px 0px 50px;    
+	border : 1px solid #0b88ea; /* Ajoute un bord */
+	min-height:auto;
+	width:auto;
+}
+
+table.box
+{
+	border : 1px solid #0b88ea; /* Ajoute un bord */
+}	
+	
+div.corp_main
+{
+	margin-left:20%;
+	width:auto;
+	min-height:450px;
+}
+
+/* les popup */
+.tablemenu
+{
+	background :#000;
+	border : 1px solid #0b88ea; /* Ajoute un bord */
+}
+	
+.tablemenu a
+{
+	color:#fff;
+	font-size:11px;
+	text-transform : uppercase; /* Le texte en majuscule */
+}
+	
+.tablemenu a:hover
+{
+	color:#a7aeff;
+	text-shadow : 0px 1px 5px #3d0097; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+}
+
+/*********************************************/
+/*		   GESTION DU MENU DE GAUCHE		 */
+/*___________________________________________*/
+div.left_game
+{
+	margin:0;
+	padding:0;
+	float:left;
+	left:0;
+	border-right: 1px; /* Ajoute un bord */
+	width:19.8%;
+}
+
+div.main_menu
+{
+	position:absolue;
+}
+
+.planet
+{
+	border-bottom: 1px solid #ccc; /* Ajoute un bord */
+	border-right: 1px solid #ccc; /* Ajoute un bord */
+}
+
+.build
+{
+	border: 1px solid #406f7c; /* Ajoute un bord */
+}
+
+.bwWrapper {
+    position:relative;
+    display:block;
+}
+
+.navbox {
+	position: relative;
+	float: left;
+}
+
+ul.nav {
+	display: block;
+	width: 200px;
+	padding: 0px 0 1px 0;
+	-webkit-background-size: 50% 100%;
+}
+
+ul.nav li a {
+	padding:5px;
+	color: #fff;
+	-webkit-border-top-right-radius: 10px;
+ 	-webkit-border-bottom-right-radius: 10px;
+	width: 180px;
+	height:20px;
+	display: block;
+	text-decoration: none;
+}
+
+ul.nav li a.vote_in {
+	color: lime;
+}
+
+ul li a.red {
+	color: red;
+}
+ul li a.green {
+	color: lime;
+}
+ul.nav li a:hover {
+
+	width: 180px;
+	height:22px;
+	color: #FFF;
+}
+
+div.vote_out
+{
+	color:red;
+}
+
+/*********************************************/
+/*	GESTION DU MENU DU TOPNAV & TOPMENU		 */
+/*___________________________________________*/
+
+div.topnav_game,div.news_game,div.admin_game
+{
+	margin:15px 150px 0px 50px;	
+	border : 1px solid #0b88ea; /* Ajoute un bord */
+	border-bottom :1px solid #; /* Ajoute un bord */
+	min-height:40px;
+}
+
+.admin_game a
+{
+	margin-left:10px;
+	color:#fff;
+	font-size:10px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-transform : uppercase; /* Le texte en majuscule */
+}
+
+.admin_game a:hover
+{
+	color:#fff;
+	text-shadow : 0px 1px 8px #393939; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+}
+
+div.hauteur
+{
+	margin: 0;
+	padding: 0;
+	margin-top:-2px;
+	height:30px;
+	border-bottom: 1px solid #0b88ea; /* bord bas uniquement*/
+}
+
+td.header_planet,td.header_img,td.header_name,td.header_name_planet,td.header_ressource
+{
+	color:#ffffff;
+	width:140px;
+}
+
+td.header_img img.ressources
+{
+	border:0px;
+	height:28px;
+	width:45px;
+}
+
+td.header_img img.messages
+{
+	border:0px;
+	height:37px;
+	width:45px;
+}
+
+td.header_name
+{
+	color:#ffffff;
+	text-decoration:underline;
+}
+
+td.officier_img
+{
+	height:75px;
+	width:75px;
+}
+
+td.officier_img img
+{
+	height:60px;
+	width:60px;
+}
+
+table.info
+{
+	background :url('../images/font/fond.png');
+	background-repeat:repeat-z;
+	border-top: 1px solid #0b88ea; /* Ajoute un bord */
+	-moz-box-shadow : 0px 0px 5px #3d0097; /* Ajoute de l'ombre sur le contour pour Mozilla */
+	-webkit-box-shadow : 0px 0px 5px #3d0097; /* Ajoute de l'ombre sur le contour pour Chrome, Safari */
+	box-shadow : 0px 0px 5px #3d0097;
+}
+/*********************************************/
+/*	   GESTION DU MENU DE DROITE OFFICIER  	 */
+/*___________________________________________*/
+
+div.officier
+{
+	float:right;
+	margin:0;
+	padding:0;
+	text-align:center;
+	
+	border : 1px solid #0b88ea; /* Ajoute un bord */
+	border-bottom : 1px solid #; /* Ajoute un bord */
+	min-height:560px;
+	margin-right:50px;
+	margin-top:15px;
+	width:80px;
+}
+
+/*********************************************/
+/*		   GESTION DES DIFFERENTS LIENS 	 */
+/*___________________________________________*/
+
+/* le top menu */
+.topnaveur ul {
+ padding:0;
+ margin:0;
+ list-style-type:none;
+ padding-top:5px;
+ }
+.topnaveur li {
+ margin-left:2px;
+ float:left; /*pour IE*/
+ }
+
+div.topnaveur a.first
+{
+	margin-left:2%;
+}
+
+div.topnaveur a ,div.lien a ,div.corp a,div.left_game a,div.footer a
+{
+	margin-left:10px;
+	color:#fff;
+	font-size:13px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+}
+
+div.corp_game a
+{
+	margin-left:10px;
+	color:#fff;
+	font-size:12px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-transform : uppercase; /* Le texte en majuscule */
+	text-decoration:none;
+}
+
+div.corp_game a:hover
+{
+	color:#fff;
+	text-shadow : 0px 1px 8px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+}
+
+div.corp a.mail
+{
+	color:#fff;
+	font-size:12px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : capitalize; /* Le texte en majuscule */
+}
+
+td.c div
+{
+	color:#fff;
+	font-size:14px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+}
+/********************************************************/
+/* 		GESTION DES CHAMPS INPUTS DE FORMULAIRE			*/
+/********************************************************/
+
+/* Pour les champs d'un formulaire : mode normal */
+input[type=submit].build{
+background: #bfd255; /* Old browsers */
+background: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bfd255), color-stop(50%,#8eb92a), color-stop(51%,#72aa00), color-stop(100%,#9ecb2d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* IE10+ */
+background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
+
+	border : 1px solid #CCC;
+	color : #FFFFFF;
+	cursor : pointer; /* Curseur de type pointer */
+	font-family : Arial, Calibri, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 3px 10px 3px 10px;
+	margin : 5px 0px 5px 0px;
+	text-decoration : none; /* Enlève la décoration du texte */
+	text-shadow : 0px 1px 1px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Pour mettre en majuscule le texte */
+	
+	-webkit-border-radius : 3px; /* Contour arrondi pour Chrome, Safari */
+	border-radius : 3px;
+
+	-webkit-box-shadow : 0px 0px 2px #4e4e4e; /* Ajoute de l'ombre sur le contour pour Chrome, Safari */
+	box-shadow : 0px 0px 2px #4e4e4e;
+}
+
+input[type=submit].build:hover{
+background: #9bae2e; /* Old browsers */
+background: -moz-linear-gradient(top, #9bae2e 0%, #6c8c20 50%, #558000 51%, #779822 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9bae2e), color-stop(50%,#6c8c20), color-stop(51%,#558000), color-stop(100%,#779822)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #9bae2e 0%,#6c8c20 50%,#558000 51%,#779822 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #9bae2e 0%,#6c8c20 50%,#558000 51%,#779822 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #9bae2e 0%,#6c8c20 50%,#558000 51%,#779822 100%); /* IE10+ */
+background: linear-gradient(to bottom, #9bae2e 0%,#6c8c20 50%,#558000 51%,#779822 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bae2e', endColorstr='#779822',GradientType=0 ); /* IE6-9 */
+
+	border : 1px solid #CCC;
+	color : #FFFFFF;
+	cursor : pointer; /* Curseur de type pointer */
+	font-family : Arial, Calibri, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 3px 10px 3px 10px;
+	margin : 5px 0px 5px 0px;
+	text-decoration : none; /* Enlève la décoration du texte */
+	text-shadow : 0px 1px 1px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Pour mettre en majuscule le texte */
+	
+	-webkit-border-radius : 3px; /* Contour arrondi pour Chrome, Safari */
+	border-radius : 3px;
+	-webkit-box-shadow : 0px 0px 2px #4e4e4e; /* Ajoute de l'ombre sur le contour pour Chrome, Safari */
+	box-shadow : 0px 0px 2px #4e4e4e;
+}
+input[type=submit].build:active{
+text-shadow : 0px 0px 0px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+}
+
+/* Pour les champs d'un formulaire : mode normal */
+input[type=submit].stopbuild{
+	background: #f84332; /* Old browsers */
+	background: -moz-linear-gradient(top, #f84332 0%, #f1675d 50%, #f6180c 51%, #f02318 71%, #e72a27 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f84332), color-stop(50%,#f1675d), color-stop(51%,#f6180c), color-stop(71%,#f02318), color-stop(100%,#e72a27)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f84332 0%,#f1675d 50%,#f6180c 51%,#f02318 71%,#e72a27 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f84332 0%,#f1675d 50%,#f6180c 51%,#f02318 71%,#e72a27 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f84332 0%,#f1675d 50%,#f6180c 51%,#f02318 71%,#e72a27 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f84332 0%,#f1675d 50%,#f6180c 51%,#f02318 71%,#e72a27 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f84332', endColorstr='#e72a27',GradientType=0 ); /* IE6-9 */
+	border : 1px solid #CCC;
+	color : #FFFFFF;
+	font-family : Arial, Calibri, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 3px 10px 3px 10px;
+	margin : 5px 0px 5px 0px;
+	text-decoration : none; /* Enlève la décoration du texte */
+	text-shadow : 0px 1px 1px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Pour mettre en majuscule le texte */
+	
+
+	-webkit-border-radius : 3px; /* Contour arrondi pour Chrome, Safari */
+	border-radius : 3px;
+	-webkit-box-shadow : 0px 0px 2px #4e4e4e; /* Ajoute de l'ombre sur le contour pour Chrome, Safari */
+	box-shadow : 0px 0px 2px #4e4e4e;
+}
+
+input[type=submit].stopbuild:hover{
+background: #d91907; /* Old browsers */
+background: -moz-linear-gradient(top, #d91907 0%, #e62214 50%, #bb1007 51%, #ba150c 71%, #b61714 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d91907), color-stop(50%,#e62214), color-stop(51%,#bb1007), color-stop(71%,#ba150c), color-stop(100%,#b61714)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #d91907 0%,#e62214 50%,#bb1007 51%,#ba150c 71%,#b61714 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #d91907 0%,#e62214 50%,#bb1007 51%,#ba150c 71%,#b61714 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #d91907 0%,#e62214 50%,#bb1007 51%,#ba150c 71%,#b61714 100%); /* IE10+ */
+background: linear-gradient(to bottom, #d91907 0%,#e62214 50%,#bb1007 51%,#ba150c 71%,#b61714 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d91907', endColorstr='#b61714',GradientType=0 ); /* IE6-9 */
+
+	border : 1px solid #CCC;
+	color : #FFFFFF;
+	cursor : pointer; /* Curseur de type pointer */
+	font-family : Arial, Calibri, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 3px 10px 3px 10px;
+	margin : 5px 0px 5px 0px;
+	text-decoration : none; /* Enlève la décoration du texte */
+	text-shadow : 0px 1px 1px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Pour mettre en majuscule le texte */
+	
+	-webkit-border-radius : 3px; /* Contour arrondi pour Chrome, Safari */
+	border-radius : 3px;
+	-webkit-box-shadow : 0px 0px 2px #4e4e4e; /* Ajoute de l'ombre sur le contour pour Chrome, Safari */
+	box-shadow : 0px 0px 2px #4e4e4e;
+}
+input[type=submit].stopbuild:active{
+text-shadow : 0px 0px 0px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+}
+
+/* Pour les champs d'un formulaire : mode normal */
+.bloqued{
+	background: #9c9c9c; /* Old browsers */
+	background: -moz-linear-gradient(top, #9c9c9c 0%, #454545 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9c9c9c), color-stop(100%,#454545)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #9c9c9c 0%,#454545 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #9c9c9c 0%,#454545 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #9c9c9c 0%,#454545 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #9c9c9c 0%,#454545 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9c9c', endColorstr='#454545',GradientType=0 ); /* IE6-9 */
+	height:17px;
+	min-width:80px;
+	border : 1px solid #000;
+	color : #ccc;
+	font-family : Arial, Calibri, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 3px 10px 3px 10px;
+	margin : 5px 0px 5px 0px;
+	text-decoration : none; /* Enlève la décoration du texte */
+	text-shadow : 0px 1px 1px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Pour mettre en majuscule le texte */
+	
+	-webkit-border-radius : 3px; /* Contour arrondi pour Chrome, Safari */
+	border-radius : 3px;
+}
+
+.bloqueded
+{
+	background: #9c9c9c; /* Old browsers */
+	background: -moz-linear-gradient(top, #9c9c9c 0%, #454545 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9c9c9c), color-stop(100%,#454545)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #9c9c9c 0%,#454545 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #9c9c9c 0%,#454545 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #9c9c9c 0%,#454545 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #9c9c9c 0%,#454545 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9c9c', endColorstr='#454545',GradientType=0 ); /* IE6-9 */
+	height:27px;
+	min-width:80px;
+	border : 1px solid #000;
+	color : #ccc;
+	font-family : Arial, Calibri, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 3px 10px 3px 10px;
+	margin : 5px 0px 5px 0px;
+	text-decoration : none; /* Enlève la décoration du texte */
+	text-shadow : 0px 1px 1px #333333; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Pour mettre en majuscule le texte */
+	
+	-webkit-border-radius : 3px; /* Contour arrondi pour Chrome, Safari */
+	border-radius : 3px;
+}
+/****************************************************/
+/*		liste de construction vaisseau defense		*/
+/****************************************************/
+table.construct
+{
+		text-align:center;
+		margin:5px 5px 5px 5px;
+        
+		border : 1px solid #0b88ea; /* Ajoute un bord */
+		min-height:450px;
+		width:auto;
+}
+
+table.construct select
+{
+		
+		border:0px;
+		color:#fff;
+		-khtml-opacity       : 0.5;
+		opacity              : 0.5; 
+}
+
+/********LE FOOTER********/
+
+div.footer
+{
+	border-top: 1px solid #0b88ea; /* Ajoute un bord */
+	margin:40px 0 0 0;
+	bottom:0;
+	position:absolue;
+	height:30px;
+	width:100%;
+}
+
+/* le menu */
+.footer ul
+ {
+	 list-style-type:none;
+	 padding-top:5px;
+ }
+ 
+.footer li {
+	float:left; /*pour IE*/
+	height:45px;
+	margin-left:2px;
+ }
+ 
+.footer li a
+ {
+ 	margin-left:10px;
+	color:#fff;
+	font-size:13px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+ }
+ /*******************************************/
+ /*          DESIGN FORUM INGAME            */
+ /*******************************************/
+ 
+ table.forum,table.section
+ {
+		margin:50px 0 0 0;
+        
+		border : 0px solid #616968; /* Ajoute un bord */
+		min-height:450px;
+		width:95%;	
+		border-radius:5px;
+		-webkit-border-radius:5px;
+ }
+ 
+ table.categorie
+ {
+	width:100%;
+	border : 0px solid #616968; /* Ajoute un bord */
+	/* contour arrondie */
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	padding-bottom:5px;
+ }
+ 
+ .categorie td h1
+ {
+		text-align:left;
+		font-size:12px;
+		padding-left:5px;
+ }
+ 
+ .categorie td.title,table.section tr.title
+ {
+		background: #45484d; /* Old browsers */
+		background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #45484d 0%,#000000 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+		border-radius:5px 5px 0 0;
+		-webkit-border-radius:5px 5px 0 0;
+ }
+ 
+  td.forum_name a
+ {
+  	margin-left:10px;
+	color:#a7aeff;
+	font-size:13px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+ }
+ 
+ .last a
+ {
+   	margin-left:10px;
+	color:#a7aeff;
+	font-size:11px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+ }
+ 
+ .description
+ {
+	margin:50px 0 0 0;
+	
+ 	border : 1px solid #616968; /* Ajoute un bord */
+	/* contour arrondie */
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	width:80%;
+ }
+ 
+ /******************************/
+ /*			SECTIONS		   */
+ /******************************/
+ table.section tr.title th
+ {
+	height:25px;	
+ }
+
+ table.section tr.title th.pagination
+ {
+	border-radius:5px 0px 0px 0px;
+	-webkit-border-radius:5px 0px 0px 0px;	
+ }
+ 
+ table.section tr.title th.newmsgs
+ {
+	border-radius:0px 5px 0px 0px;
+	-webkit-border-radius:0px 5px 0px 0px;	
+ }
+ 
+  table.section tr.title td.img
+ {
+	width:10px;
+	height:10px;
+ }
+ 
+ td.tide,.pagination
+ {
+		text-align:left;
+		font-size:12px;
+		padding-left:5px;
+ }
+ 
+  td.tide div a,.pagination a
+ {
+  	margin-left:10px;
+	color:#a7aeff;
+	font-size:13px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+ }
+ 
+.newmsgs
+ {
+		text-align:right;
+		font-size:12px;
+		padding-left:5px;
+ }
+ 
+ .title2
+ {
+	background: rgb(226,226,226); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+	color:#000;
+	height:28px;
+ }
+ 
+ table.avatar
+ {
+ 		margin:5px;
+        
+		border : 1px solid #616968; /* Ajoute un bord */
+		border-radius:5px;
+		-webkit-border-radius:5px;
+		width:150px;
+ }
+
+ 
+ table.themess
+ {
+	float:right;
+	width:100%;
+	min-height:150px;
+ }
+
+ td.themess
+ {
+ background:#;
+ }
+ 
+td.avatar
+{
+width:160px;
+
+}
+
+td.lien,tr.messages
+{
+	height:25px;
+}
+
+td.mgs
+{
+	height:145px;
+	text-align:left;
+	vertical-align:top;
+}
+
+td.lien a
+{
+	float:right;
+	text-align:right;
+  	margin-left:10px;
+	color:#a7aeff;
+	font-size:13px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+}
+
+tr.signature
+{
+	border-top:1px solid #fff;
+}
+
+tr.messages
+{
+        
+		border : 1px solid #616968; /* Ajoute un bord */
+		border-radius:5px;
+		-webkit-border-radius:5px;
+}
+
+.quote
+{
+        background :url('../images/Games/img/quote.png');
+		border : 1px solid #616968; /* Ajoute un bord */
+		border-radius:5px;
+		-webkit-border-radius:5px;
+}
+.quote2
+{
+        
+		border : 1px solid #616968; /* Ajoute un bord */
+		border-radius:5px;
+		-webkit-border-radius:5px;
+}
+
+td h2
+{
+	font-family:Verdana;
+	color:#a7aeff;
+	font-size:13px;
+	letter-spacing : 1px; /* Espace entre les lettres */
+	text-shadow : 0px 1px 5px #0b88ea; /* Ajoute de l'ombre sur le texte : Décalage horizontal - puis vertical - Flou - Couleur */
+	text-transform : uppercase; /* Le texte en majuscule */
+}
+
+/* le menu des icone */
+ul.balise{
+ padding:0;
+ margin:0;
+ list-style-type:none;
+ padding-top:5px;
+ }
+.balise li {
+ margin-left:2px;
+ float:left; /*pour IE*/
+ }
+ 
+ div.balise
+ {
+	background :url('../images/Games/img/fond.png');
+	cursor:pointer;
+	text-align:center;
+	padding-top:2px;
+	height:20px;
+	min-width:20px;
+	color:#fff;
+	border : 1px solid #616968; /* Ajoute un bord */
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	padding-bottom:1px;
+	padding-left:3px;
+	padding-right:3px;
+ }
