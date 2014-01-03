@@ -162,8 +162,9 @@ function display ($page, $title = '', $topnav = false, $metatags = '', $AdminPag
 	}
 
 	$DisplayPage .= StdFooter();
-	if (isset($link)) {
-		mysql_close($link);
+	if (isset($db)) {
+		//close connexion PDO
+		$db = null;
 	}
 
 	echo $DisplayPage;

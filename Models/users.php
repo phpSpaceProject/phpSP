@@ -1,26 +1,26 @@
 <?php
 /**
- * Tis file is part of Nacatiks
+ * This file is part of phpSpaceProject
  *
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
- * @see http://www.nacatikx.dafun.com/forum/index.php
+ * @see http://phpsp.fr/
  *
- * Copyright (c) 2012-Present, Nacatiks Support Team <http://www.nacatikx.dafun.com/index.php?page=Accueil>
+ * Copyright (c) 2012-Present, phpSpaceProject Support Team <http://phpsp.fr/board/>
  * All rights reserved.
- *=========================================================
-  _   _          _____       _______ _____ _  __ _____ 
- | \ | |   /\   / ____|   /\|__   __|_   _| |/ // ____|
- |  \| |  /  \ | |       /  \  | |    | | | ' /| (___  
- | . ` | / /\ \| |      / /\ \ | |    | | |  <  \___ \ 
- | |\  |/ ____ \ |____ / ____ \| |   _| |_| . \ ____) |
- |_| \_/_/    \_\_____/_/    \_\_|  |_____|_|\_\_____/                                                                          
- *=========================================================
+ *===================================
+  _____  _    _ _____   _____ _____  
+ |  __ \| |  | |  __ \ / ____|  __ \ 
+ | |__) | |__| | |__) | (___ | |__) |
+ |  ___/|  __  |  ___/ \___ \|  ___/ 
+ | |    | |  | | |     ____) | |     
+ |_|    |_|  |_|_|    |_____/|_|                 
+ *===================================
  *
  */
 class users extends Model
 {
 	public $id;
-	const $table = "game_users";
+	var $table = "game_users";
 
 }
 ?>

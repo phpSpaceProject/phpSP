@@ -20,17 +20,20 @@
  */
 
 if ( defined('INSIDE') ) {
-	define('ADMINEMAIL'               , "admin@space-legacy.dafun.com");
+	define('ADMINEMAIL'               , "email");
 	define('GAMEURL'                  , "http://".$_SERVER['HTTP_HOST']."/");
 	$server = explode(".",$_SERVER['HTTP_HOST']);
+	
 	if(isset($server[1]))
 	{
-	$ServeName = $server[1];
+		$ServeName = $server[1];
 	}
 	else
 	{
-	$ServeName = $server[0];
+		$ServeName = $server[0];
 	}
+	
+	
 	define('GAMENAME'                  , "".$ServeName."");
 
 	define('ACCUEIL_BASE'      ,"accueil.php?page=");
@@ -39,9 +42,9 @@ if ( defined('INSIDE') ) {
 	define('ADMIN_BASE'      ,"admin.php?page=");
 	define('INSTALL_BASE'      ,"index.php?mode=");
 
-	define('STAFF'      ,"mandalorien");
-	define('OPERATEUR'      ,"mandalorien");
-	define('DESIGNER'      ,"mandalorien");
+	define('STAFF'      ,"phpSP");
+	define('OPERATEUR'      ,"phpSP");
+	define('DESIGNER'      ,"phpSP");
 	
 	define('COUNT_SUJET_PAGE'      ,20); #20 sujets par page
 	define('COUNT_MESSAGES_PAGE'      ,20); #20 sujets par page

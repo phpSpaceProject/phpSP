@@ -58,6 +58,6 @@ define('IMAGES',SITEURL .'images/');
 $dpath = IMAGES;
 
 define('TEMPLATE_DIR', realpath(VUES . 'Template/'));
-define('TEMPLATE_NAME', 'noxgame');
+define('TEMPLATE_NAME', 'phpsp');
 define('VERSION','BETA 2');
 define('DEFAULT_LANG', 'fr');

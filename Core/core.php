@@ -47,7 +47,7 @@ include(INCLUDES . 'debug.class.'.PHPEXT);
 $debug = new Debug();
 
 //Connexion PDO
-/*require_once(CONNECT .'PDOconnect.php');
+require_once(CONNECT .'PDOconnect.php');
 require_once(MODELS .'model.php');
 
 
@@ -58,8 +58,7 @@ foreach ($config as $c)
 {
 	$var_config[$c["config_name"]] = $c["config_value"];
 }
-var_dump($var_config);
-*/
+
 include(CORE . '/db/mysql.' . PHPEXT);
 
 $query = doquery('SELECT * FROM {{table}}', 'config');
