@@ -98,7 +98,7 @@ if ( defined('INSIDE') ) {
 	define('TIME_LONG_ATTACK_BLOCKED'       , 86400);# 60 * 60 * 24
 	// Debug Level
 	define('DEBUG', 1); // Debugging off
-	define('BASE_GAME'      ,"Xnova");
+	define('BASE_GAME'      ,"PHPSP");
 	// Mot qui sont interdit a la saisie !
 	$ListCensure = array ( "<", ">", "script", "doquery", "http", "javascript", "'" );
 } else {

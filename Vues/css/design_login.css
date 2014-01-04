@@ -1,21 +1,14 @@
 /**
- * This file is part of Nacatiks
- *
- * @license http://www.gnu.org/licenses/gpl-3.0.txt
- * @see http://www.nacatikx.dafun.com/forum/index.php
- *
- * Copyright (c) 2012-Present, Nacatiks Support Team <http://www.nacatikx.dafun.com/index.php?page=Accueil>
- * All rights reserved.
- *=========================================================
-  _   _          _____       _______ _____ _  __ _____ 
- | \ | |   /\   / ____|   /\|__   __|_   _| |/ // ____|
- |  \| |  /  \ | |       /  \  | |    | | | ' /| (___  
- | . ` | / /\ \| |      / /\ \ | |    | | |  <  \___ \ 
- | |\  |/ ____ \ |____ / ____ \| |   _| |_| . \ ____) |
- |_| \_/_/    \_\_____/_/    \_\_|  |_____|_|\_\_____/                                  
- *=========================================================
- *
- * css by mandalorien
+ * CSS : Design Structure login
+ *===================================
+  _____  _    _ _____   _____ _____  
+ |  __ \| |  | |  __ \ / ____|  __ \ 
+ | |__) | |__| | |__) | (___ | |__) |
+ |  ___/|  __  |  ___/ \___ \|  ___/ 
+ | |    | |  | | |     ____) | |     
+ |_|    |_|  |_|_|    |_____/|_|                 
+ *===================================
+ *  by phpsp                     
  */
 body
 {
@@ -76,7 +69,7 @@ input[type=submit]
 div.corp
 {
 	height:400px;
-	margin:100px 100px 40px 100px;
+	margin:60px 100px 40px 100px;
 	-webkit-border-radius : 4px; /* Contour arrondi pour Chrome, Safari */
 	border-radius : 4px;
 	text-align:center;
@@ -87,7 +80,7 @@ div.corp_login
 {
 	min-height:150px;
 	margin:auto;
-	margin-top:150px;
+	margin-top:11%;
 	margin-bottom:240px;
 	width:300px;
 	-webkit-border-radius : 4px; /* Contour arrondi pour Chrome, Safari */

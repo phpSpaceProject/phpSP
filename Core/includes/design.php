@@ -260,9 +260,9 @@ function StdFooter() {
 		</table>';
 	}
 	
-	$parse['copyright']	= '<a href="http://fr.wikipedia.org/wiki/Copyright" title="Copyright">Copyright</a> Design by<a href="http://www.yag.prod.bz/" title="Yag portfolio">'.DESIGNER.'</a>';
+	$parse['copyright']	= '<a href="http://fr.wikipedia.org/wiki/Copyright" title="Copyright">Copyright</a> Design by <a href="http://phpsp.fr/board/index.php" title="'. BASE_GAME .'">'.DESIGNER.'</a> ';
 	$parse['copyleft']	= '<a href="http://fr.wikipedia.org/wiki/Copyleft" title="Copyleft">Copyleft</a> <a href="'.ACCUEIL_BASE.'credits" title="'.GAMENAME.'">'.GAMENAME.'</a> 2013';
-	$parse['type']		= 'Serveur Fièrement propulsé par <a href="http://wootook.org/" title="'. BASE_GAME .'">'. BASE_GAME .'</a>';
+	$parse['type']		= 'Serveur Fièrement propulsé par <a href="http://phpsp.fr/board/index.php" title="'. BASE_GAME .'">'. BASE_GAME .'</a>';
 	$parse['w3c']		='<a href="http://validator.w3.org/check?uri=referer">Valid XHTML 1.0 Strict</a>';
 	$parse['TranslationBy'] = isset($lang['TranslationBy']) ? $lang['TranslationBy'] : '';
 	

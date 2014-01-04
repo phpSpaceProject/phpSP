@@ -10,16 +10,18 @@
 		<p>{cred_forum}:</p>
 		</td>
 		<td>
-			<p><a href="http://www.nacatikx.dafun.com/" title="Nacatiks" >www.nacatikx.dafun.com</a></p>
-			<p><a href="http://www.nacatikx.dafun.com/Forum/index.php" title="Nacatiks Forum" >Nacatiks Forum</a></p>
+			<p><a href="http://phpsp.fr" title="http://phpsp.fr" >phpsp.fr</a></p>
+			<p><a href="http://phpsp.fr/board/index.php" title="phpsp Forum" >Forum</a></p>
 		</td>
 	</tr>
 	<tr>
 		<td>
+		<p>LordPretender</p>
 		<p>mandalorien</p>
 		</td>
 		<td>
-			<p>{cred_creat} nacatiks / {cred_prog}</p>
+			<p>{cred_creat} phpsp / {cred_prog}</p>
+			<p>{cred_creat} phpsp / {cred_prog}</p>
 		</td>
 	</tr>
 	<tr>
