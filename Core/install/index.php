@@ -41,7 +41,6 @@ if (filesize(CONNECT . 'config.php') !=0) {
     header('Location:'. REDIRECT .'');
 }
 
-var_dump(filesize(CONNECT . 'config.php'));
 include(INCLUDES . 'debug.class.'.PHPEXT);
 $debug = new Debug();
 
