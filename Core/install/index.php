@@ -37,6 +37,7 @@ define('ROOT_PATH', dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR);
 
 include(ROOT_PATH .'Core/includes/define.php');
 
+//petite sécurité 
 if (filesize(CONNECT . 'config.php') !=0) {
     header('Location:'. REDIRECT .'');
 }
@@ -65,6 +66,31 @@ $nextPage = $page + 1;
 
 $mainTpl = gettemplate('install/ins_body');
 includeLang('install/install');
+
+/* création .htaccess */
+$baseFolder = substr($_SERVER['REQUEST_URI'], 0); # racine du serveur
+$folderHtacces = explode ("/",$baseFolder); # on explose
+unset($folderHtacces[intval(0)]); # on supprime la ligne 0 du tableau vide
+
+/* verification si le htaccess est vide */
+if (filesize(ROOT_PATH .'.htaccess') == 0)
+{
+	$dz = fopen(ROOT_PATH .".htaccess", "a");# on ouvre
+
+	$fileData =<<<EOF
+RewriteEngine On
+RewriteBase /{$folderHtacces[1]}/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php/$1 [L]
+RewriteRule images/(.*)  Vues/images/$1 [L]
+RewriteRule css/(.*)  Vues/css/$1 [L]
+RewriteRule script/(.*)  Vues/scripts/$1 [L]
+RewriteRule police/(.*)  Vues/police/$1 [L]
+EOF;
+	fwrite($dz, $fileData); #on ecris
+	fclose($dz); # on ferme le fichier
+}
 
 switch ($mode) {
     case 'intro':
