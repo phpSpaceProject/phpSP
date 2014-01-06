@@ -22,7 +22,6 @@
 define('BATIMENT','functions/Batiment/');
 define('DEFENSE','functions/defense/');
 define('GALAXIE','functions/Galaxie/');
-define('ITEM','functions/item/');
 define('MISSION','functions/Mission/');
 define('RECHERCHE','functions/Recherche/');
 define('VAISSEAU','functions/vaisseau/');
@@ -67,13 +66,6 @@ include(GALAXIE.'ShowGalaxyMISelector.'.PHPEXT);
 include(GALAXIE.'ShowGalaxyRows.'.PHPEXT);
 include(GALAXIE.'ShowGalaxySelector.'.PHPEXT);
 include(GALAXIE.'ShowGalaxyTitles.'.PHPEXT);
-
-
-//objet
-include(ITEM.'ItemBuildingPage.'.PHPEXT);
-include(ITEM.'ItemBuildListBox.'.PHPEXT);
-include(ITEM.'FinishItemFromQueue.'.PHPEXT);
-include(ITEM.'HandleItemBuildingQueue.'.PHPEXT);
 
 // Mission
 include(MISSION.'FlyingFleetHandler.'.PHPEXT);

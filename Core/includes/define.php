@@ -31,6 +31,7 @@ define('VUES',ROOT_PATH .'Vues/');
 define('STATIQUE',VUES .'Static/');
 define('CONTROLLER',ROOT_PATH .'Controllers/');
 define('INCLUDES',CORE .'includes/');
+define('PHPSP',CORE .'includes/phpsp/');
 define('CONNECT',CORE .'connect/');
 define('ERROR',CORE .'error/index.php');
 

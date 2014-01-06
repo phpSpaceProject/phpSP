@@ -76,6 +76,8 @@ include(INCLUDES . 'unlocalised.' . PHPEXT);
 include(INCLUDES . 'todofleetcontrol.' . PHPEXT);
 include(VUES . 'language/' . DEFAULT_LANG . '/lang_info.cfg');
 include(INCLUDES . 'vars.' . PHPEXT);
+include(PHPSP . 'phpsp_vars.class.' . PHPEXT);
+include(PHPSP . 'phpsp_types.' . PHPEXT);
 include(INCLUDES . 'strings.' . PHPEXT);
 //facebook
 /*include(INCLUDES . 'API/base_facebook.'.PHPEXT);
