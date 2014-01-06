@@ -253,7 +253,6 @@
 		{
 			$BuildedFleet            = HandleFleetBuildingQueue ( $CurrentUser, $CurrentPlanet, $ProductionTime );
 			$BuildedDefense          = HandleDefenseBuildingQueue ( $CurrentUser, $CurrentPlanet, $ProductionTime );
-			$BuildedItems            = HandleItemBuildingQueue ( $CurrentUser, $CurrentPlanet, $ProductionTime );
 
 			$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 			$QryUpdatePlanet .= "`metal` = '"            . $CurrentPlanet['metal']             ."', ";
@@ -261,7 +260,6 @@
 			$QryUpdatePlanet .= "`deuterium` = '"        . $CurrentPlanet['deuterium']         ."', ";
 			$QryUpdatePlanet .= "`last_update` = '"      . $CurrentPlanet['last_update']       ."', ";
 			$QryUpdatePlanet .= "`b_hangar_id` = '"      . $CurrentPlanet['b_hangar_id']       ."', ";
-			$QryUpdatePlanet .= "`b_item_id` = '"      . $CurrentPlanet['b_item_id']       ."', ";
 			$QryUpdatePlanet .= "`b_defense_id` = '"      . $CurrentPlanet['b_defense_id']       ."', ";
 			$QryUpdatePlanet .= "`metal_perhour` = '"    . $CurrentPlanet['metal_perhour']     ."', ";
 			$QryUpdatePlanet .= "`crystal_perhour` = '"  . $CurrentPlanet['crystal_perhour']   ."', ";
@@ -278,16 +276,6 @@
 				}
 			}
 			
-			//pour la construction d'objet
-			if ( $BuildedItems != '' )
-			{
-				foreach ( $BuildedItems as $Element => $Count )
-				{
-					if ($Element <> '')
-						$QryUpdatePlanet .= "`". $resource[$Element] ."` = '". $CurrentPlanet[$resource[$Element]] ."', ";
-				}
-			}
-			
 			//pour la construction de def
 			if ( $BuildedDefense != '' )
 			{
@@ -298,7 +286,6 @@
 				}
 			}
 			$QryUpdatePlanet .= "`b_hangar` = '". $CurrentPlanet['b_hangar'] ."', ";
-			$QryUpdatePlanet .= "`b_item` = '". $CurrentPlanet['b_item'] ."', ";
 			$QryUpdatePlanet .= "`b_defense` = '". $CurrentPlanet['b_defense'] ."' ";
 			$QryUpdatePlanet .= "WHERE ";
 			$QryUpdatePlanet .= "`id` = '". $CurrentPlanet['id'] ."';";
