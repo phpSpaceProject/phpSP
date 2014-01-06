@@ -1,21 +1,20 @@
 <?php
 /**
- * This file is part of Noxgame
+ * This file is part of phpSpaceProject
  *
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
+ * @see http://phpsp.fr/
  *
- * Copyright (c) 2012-Present, mandalorien
+ * Copyright (c) 2012-Present, phpSpaceProject Support Team <http://phpsp.fr/board/>
  * All rights reserved.
- *=========================================================
-  _   _                                     
- | \ | |                                    
- |  \| | _____  ____ _  __ _ _ __ ___   ___ 
- | . ` |/ _ \ \/ / _` |/ _` | '_ ` _ \ / _ \
- | |\  | (_) >  < (_| | (_| | | | | | |  __/
- |_| \_|\___/_/\_\__, |\__,_|_| |_| |_|\___|
-                  __/ |                     
-                 |___/                                                                             
- *=========================================================
+ *===================================
+  _____  _    _ _____   _____ _____  
+ |  __ \| |  | |  __ \ / ____|  __ \ 
+ | |__) | |__| | |__) | (___ | |__) |
+ |  ___/|  __  |  ___/ \___ \|  ___/ 
+ | |    | |  | | |     ____) | |     
+ |_|    |_|  |_|_|    |_____/|_|                 
+ *===================================
  *
  */
 
@@ -168,5 +167,31 @@ function ScanDirectory($Directory){
                 }
 	}
   closedir($MyDirectory);
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+//											SECURITE DES VARIABLES
+function SecureType($var,$action)
+{
+	/* action:
+	 * read => on lis la variable
+	 * write => on ecris , donc on insere dans une requete
+	 */
+	$type = gettype($var); # on veux savoir le type
+	
+	if($type == 'string' && $action == 'write')
+	{
+		$secure = htmlentities($var,ENT_QUOTES,"UTF-8");
+	}
+	elseif($type == 'string' && $action == 'read')
+	{
+		$secure = stripslashes($var);
+	}
+	elseif($type == 'integer')
+	{
+		$secure = intval($var);
+	}
+	
+	return $secure;
 }
 ?>

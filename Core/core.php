@@ -19,7 +19,7 @@
  */
 
 
-/* on de marre la session */
+/* on demarre la session */
 session_start();
 ini_set('session.use_cookies', '1');
 ini_set('session.use_only_cookies', '1'); // PHP >= 4.3

@@ -24,7 +24,7 @@
 	{
 		/* sécurisation des champs */
 
-		$login = htmlentities($_POST['username'],ENT_QUOTES,"UTF-8");
+		$login = SecureType($_POST['username'],'write');
 		$password = md5(mysql_real_escape_string($_POST['password']));
 
 		/*===============
