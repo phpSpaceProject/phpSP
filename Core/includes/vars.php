@@ -88,20 +88,6 @@ if ( defined('INSIDE')) {
 	214 => "dearth_star",
 	215 => "battleship",
 	
-	300 => "onecase",#1 case
-	301 => "twocases",#2 cases
-	302 => "fivecases",#5 cases
-	303 => "tencases",#10 cases
-	304 => "twentycases",#20 cases
-	305 => "light_blaster",# blaster leger / 1 case
-	306 => "heavy_blaster",# blaster lourd / 2 cases
-	307 => "canon_ions",#canon ions / 5 cases
-	308 => "canon_busters",#canon plasma / 10 cases
-	309 => "react_combus",# réacteur a combustion / 5 cases
-	310 => "react_impuls",# réacteur a impulsion / 7 cases
-	311 => "react_hyper",# propulseur hyperespace / 12 cases
-	312 => "occult_shield",# occulteur / 25 cases
-	
 	401 => "misil_launcher",
 	402 => "small_laser",
 	403 => "big_laser",
@@ -172,21 +158,6 @@ if ( defined('INSIDE')) {
 		213 => array(  8 =>   9, 110 =>   6, 107 =>   5),
 		214 => array(  8 =>  12, 110 =>   7, 107 =>   6, 199 =>   1),
 		215 => array(  8 =>   8, 107 =>   5, 111 =>  12, 118 =>   5),
-		
-		// Objet
-		300 => array(  8 =>   1),
-		301 => array(  8 =>   2),
-		302 => array(  8 =>   4),
-		303 => array(  8 =>   8),
-		304 => array(  8 =>   14),
-		305 => array(  8 =>   2, 106 =>   3,111 => 3),
-		306 => array(  8 =>   4, 106 =>   6,111 => 6),
-		307 => array(  8 =>   6, 106 =>   8,111 => 2,112 => 3),
-		308 => array(  8 =>   10,106 =>  10,111 => 4,112 => 6,113 => 3),
-		309 => array(  8 =>   2 ,106 =>   3,108 =>   3),
-		310 => array(  8 =>   5 ,106 =>   4,109 =>   3),
-		311 => array(  8 =>   10,106 =>   6,107 =>   6),
-		312 => array(  8 =>   12,106 =>  12,119 =>   1),
 
 		// Defense
 		401 => array(  15 =>   1),
@@ -234,20 +205,6 @@ if ( defined('INSIDE')) {
 		117 => array ( 'metal' =>     1000, 'crystal' =>    2500, 'deuterium' =>      2000, 'energy_max' =>   0, 'factor' =>   2),
 		118 => array ( 'metal' =>     10000, 'crystal' =>    10000, 'deuterium' =>      10000, 'energy_max' =>   0, 'factor' =>   3),
 		119 => array ( 'metal' =>       0, 'crystal' =>       0, 'deuterium' =>       0, 'energy_max' => 300000, 'factor' =>   3),
-		
-		300 => array ( 'metal' =>     200, 'crystal' =>    0, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		301 => array ( 'metal' =>     400, 'crystal' =>    0, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		302 => array ( 'metal' =>     800, 'crystal' =>    0, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		303 => array ( 'metal' =>    1600, 'crystal' =>    0, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		304 => array ( 'metal' =>    3200, 'crystal' =>    0, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		305 => array ( 'metal' =>     200, 'crystal' =>   75, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		306 => array ( 'metal' =>     400, 'crystal' =>  150, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		307 => array ( 'metal' =>     500, 'crystal' =>  200, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		308 => array ( 'metal' =>     750, 'crystal' =>  400, 'deuterium' =>     0, 'energy' =>    0, 'factor' =>   2),
-		309 => array ( 'metal' =>     300, 'crystal' =>  100, 'deuterium' =>    25, 'energy' =>    0, 'factor' =>   2),
-		310 => array ( 'metal' =>     500, 'crystal' =>  175, 'deuterium' =>    45, 'energy' =>    0, 'factor' =>   2),
-		311 => array ( 'metal' =>     800, 'crystal' =>  250, 'deuterium' =>    75, 'energy' =>    0, 'factor' =>   2),
-		312 => array ( 'metal' =>   10000, 'crystal' =>10000, 'deuterium' =>  5000, 'energy' =>    0, 'factor' =>   3),
 		
 
 		202 => array ( 'metal' =>    2000, 'crystal' =>    2000, 'deuterium' =>       0, 'energy' => 0, 'factor' => 1, 'consumption' => 20  , 'consumption2' => 40  , 'speed' =>      5000, 'speed2' =>     10000, 'capacity' =>    5000 ),
@@ -357,7 +314,6 @@ if ( defined('INSIDE')) {
 	$reslist['build']    = array (   1,   2,   3,   4,  5,  6,  7,  8,  9,  10,  11,  12, 13,15);
 	$reslist['tech']     = array ( 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 118, 119);
 	$reslist['fleet']    = array ( 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215);
-	$reslist['item']     = array ( 300, 301, 302, 303, 304, 305, 306,307, 308, 309, 310, 311, 312);
 	$reslist['defense']  = array ( 401, 402, 403, 404, 405, 406, 407, 408 );
 	$reslist['officier'] = array ( 601, 602, 603, 604, 605, 606,607, 608, 610, 611);
 	$reslist['prod']     = array (   1,   2,   3,   4,  5, 212 );
