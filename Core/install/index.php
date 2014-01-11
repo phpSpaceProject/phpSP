@@ -42,7 +42,7 @@ include(INCLUDES . 'functions.' . PHPEXT);
 
 include(INCLUDES . 'unlocalised.' . PHPEXT);
 include(INCLUDES . 'todofleetcontrol.' . PHPEXT);
-include(VUES . 'language/' . DEFAULT_LANG . '/lang_info.cfg');
+include(LANGUAGES . DEFAULT_LANG . '/lang_info.cfg');
 include(INCLUDES . 'vars.' . PHPEXT);
 include(CORE . '/db/mysql.' . PHPEXT);
 include(INCLUDES . 'strings.' . PHPEXT);

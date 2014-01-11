@@ -436,7 +436,7 @@ function includeLang($filename, $extension = '.mo')
 {
     global $lang, $user;
 
-	$pathPattern = VUES ."language/%s/{$filename}%s";
+	$pathPattern = LANGUAGES ."%s/{$filename}%s";
     if (isset($user['lang']) && !empty($user['lang'])) {
         if($fp = @fopen($filename = sprintf($pathPattern, $user['lang'], '.csv'), 'r', true)) {
             fclose($fp);

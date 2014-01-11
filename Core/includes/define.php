@@ -25,15 +25,16 @@
 /********************************************************/
 
 define('ARCHIVE',	ROOT_PATH .'Archive/');
-define('MODELS',ROOT_PATH .'Models/');
-define('CORE',ROOT_PATH .'Core/');
-define('VUES',ROOT_PATH .'Vues/');
-define('STATIQUE',VUES .'Static/');
+define('MODELS',	ROOT_PATH .'Models/');
+define('CORE',		ROOT_PATH .'Core/');
+define('VUES',		ROOT_PATH .'Vues/');
+define('LANGUAGES',	ROOT_PATH .'Language/');
+define('STATIQUE',	VUES .'Static/');
 define('CONTROLLER',ROOT_PATH .'Controllers/');
-define('INCLUDES',CORE .'includes/');
-define('PHPSP',CORE .'includes/phpsp/');
-define('CONNECT',CORE .'connect/');
-define('ERROR',CORE .'error/index.php');
+define('INCLUDES',	CORE .'includes/');
+define('PHPSP',		CORE .'includes/phpsp/');
+define('CONNECT',	CORE .'connect/');
+define('ERROR',		CORE .'error/index.php');
 
 define('ROOTING',	CONTROLLER .'Pages/');
 define('ROOTGAMES',	CONTROLLER .'Pages/games/');

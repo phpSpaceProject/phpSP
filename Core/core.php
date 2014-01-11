@@ -74,7 +74,7 @@ include(INCLUDES . 'functions.' . PHPEXT);
 
 include(INCLUDES . 'unlocalised.' . PHPEXT);
 include(INCLUDES . 'todofleetcontrol.' . PHPEXT);
-include(VUES . 'language/' . DEFAULT_LANG . '/lang_info.cfg');
+include(LANGUAGES . DEFAULT_LANG . '/lang_info.cfg');
 include(INCLUDES . 'vars.' . PHPEXT);
 include(PHPSP . 'phpsp_vars.class.' . PHPEXT);
 include(PHPSP . 'phpsp_types.' . PHPEXT);
