@@ -36,9 +36,9 @@
 		}
 
 		if ($i == "1")
-			$parse['planetes'] .= "<tr><th class=b colspan=5>Il y a qu'une seule plan&egrave;te</th></tr>";
+			$parse['planetes'] .= "<tr><th class=b colspan=5>Il y a qu'une seule planète</th></tr>";
 		else
-			$parse['planetes'] .= "<tr><th class=b colspan=5>Il y a {$i} plan&egrave;tes</th></tr>";
+			$parse['planetes'] .= "<tr><th class=b colspan=5>Il y a {$i} planètes</th></tr>";
 		display(parsetemplate(gettemplate('admin/planetlist_body'), $parse), $title,true);
 		} else {
 		message($lang['sys_noalloaw'], $lang['sys_noaccess']);

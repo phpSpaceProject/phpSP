@@ -7,7 +7,7 @@
     
     <tr height="20"> 
             <th>Vaisseaux</th> 
-            <th>Quantit&eacute;e</th> 
+            <th>Quantitée</th> 
             <th>-</th> 
             <th>-</th> 
         </tr> 

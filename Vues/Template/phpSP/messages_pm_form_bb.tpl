@@ -24,10 +24,10 @@
 </tr><tr>
 	<th colspan="2"><input type="submit" value="Envoyer" size="20" style="font-weight:bold" onClick="this.form.submit();this.disabled=true;this.value='Patientez...'"/></th>
 </tr><tr>
-	<th colspan="2">&Eacute;moticones et BBCode :<br />Vous pouvez utiliser le BBCode et des &eacute;moticones pour embellir vos m&eacute;ssages...<br /><br />Pour utiliser les &eacute;moticones de base fournis par le staff :<br />
+	<th colspan="2">Ã©moticones et BBCode :<br />Vous pouvez utiliser le BBCode et des Ã©moticones pour embellir vos mÃ©ssages...<br /><br />Pour utiliser les Ã©moticones de base fournis par le staff :<br />
 	<table>
 	<tr>
-		<td><img src="images/Games/emoticones/cry.png" alt="pleuré" width="50" height="50" /> = cry</td>
+		<td><img src="images/Games/emoticones/cry.png" alt="pleurï¿½" width="50" height="50" /> = cry</td>
 		<td><img src="images/Games/emoticones/dangerous.png" alt="Dangereux" width="50" height="50" /> = dangerous</td>
 		<td><img src="images/Games/emoticones/evil.png" alt="demon" width="50" height="50" /> = evil</td>
 		<td><img src="images/Games/emoticones/gomennasai.png" alt="gomennasai" width="50" height="50"> = gomennasai</td>
@@ -37,17 +37,17 @@
 		<td><img src="images/Games/emoticones/hoho.png" alt="hoho" width="50" height="50"> = hoho</td>
 		<td><img src="images/Games/emoticones/nyu.png" alt="nyu" width="50" height="50"> = nyu</td>
 		<td><img src="images/Games/emoticones/reallyangry.png" alt="en colere" width="50" height="50"> = reallyangry</td>
-		<td><img src="images/Games/emoticones/shamed.png" alt="géné" width="50" height="50"> = shamed</td>
+		<td><img src="images/Games/emoticones/shamed.png" alt="gï¿½nï¿½" width="50" height="50"> = shamed</td>
 	</tr>
 	<tr>
 		
-		<td><img src="images/Games/emoticones/socute.png" alt="adoré" width="50" height="50"> = socute</td>
-		<td><img src="images/Games/emoticones/sorry.png" alt="désolé" width="50" height="50"> = sorry</td>
+		<td><img src="images/Games/emoticones/socute.png" alt="adorï¿½" width="50" height="50"> = socute</td>
+		<td><img src="images/Games/emoticones/sorry.png" alt="dï¿½solï¿½" width="50" height="50"> = sorry</td>
 		<td><img src="images/Games/emoticones/what.png" alt="quoi" width="50" height="50"> = what</td>
 		<td><img src="images/Games/emoticones/xd.png" alt="xd" width="50" height="50"> = xd</td>
 	</tr>
 	</table>
-	Texte en gras = [b]Texte[/b]<br />Texte souligné = [u]Texte[/u]<br />Texte en italliqiue = [i]Texte[/i]<br />Une image = [img]http://liendelimage.com[/img]</th>
+	Texte en gras = [b]Texte[/b]<br />Texte soulignï¿½ = [u]Texte[/u]<br />Texte en italliqiue = [i]Texte[/i]<br />Une image = [img]http://liendelimage.com[/img]</th>
 </tr>
 </table>
 </form>

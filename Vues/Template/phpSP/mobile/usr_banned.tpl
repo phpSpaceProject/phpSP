@@ -8,11 +8,11 @@
   <br />
   <table width="600">
     <tr>
-      <td colspan="10" class="c Style1"><div align="center">Votre compte a &eacute;t&eacute;  suspendu! </div>
+      <td colspan="10" class="c Style1"><div align="center">Votre compte a été  suspendu! </div>
       </td>
       <td>&nbsp;      </td>
     </tr><tr>
-        <th colspan="10"><p>VOUS AVEZ &Eacute;T&Eacute; BANNI! pour {raison}<br />
+        <th colspan="10"><p>VOUS AVEZ éTé BANNI! pour {raison}<br />
             </p>
           </th>
     </tr>

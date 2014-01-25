@@ -35,19 +35,19 @@ if(isset($_GET['mode'])){
 		$r = strip_tags($_POST[n]).",".intval($_POST[g]).",".intval($_POST[s]).",".intval($_POST[p]).",".intval($_POST[t])."\r\n";
 		$user['fleet_shortcut'] .= $r;
 		doquery("UPDATE {{table}} SET fleet_shortcut='{$user[fleet_shortcut]}' WHERE id={$user[id]}","users");
-		message("Le raccourcis a &eacute;t&eacute; enregistr&eacute; !","Enregistrment","". INDEX_BASE ."raccourci");
+		message("Le raccourcis a été enregistré !","Enregistrment","". INDEX_BASE ."raccourci");
 	}
 	$page = "<form method=POST><table border=0 cellpadding=0 cellspacing=1 width=519>
 	<tr height=20>
-	<td colspan=2 class=c>Nom [Galaxie/Syst&egrave;me solaire/Plan&egrave;te]</td>
+	<td colspan=2 class=c>Nom [Galaxie/Système solaire/Planète]</td>
 	</tr><tr height=\"20\"><th>
 	<input type=text name=n value=\"$g\" size=32 maxlength=32 title=\"Name\">
 	<input type=text name=g value=\"$s\" size=3 maxlength=1 title=\"Galaxie\">
 	<input type=text name=s value=\"$p\" size=3 maxlength=3 title=\"Sonnensystem\">
 	<input type=text name=p value=\"$t\" size=3 maxlength=3 title=\"Planet\">
 	 <select name=t>";
-	$page .= '<option value="1"'.(($c[4]==1)?" SELECTED":"").">Plan&egrave;te</option>";
-	$page .= '<option value="2"'.(($c[4]==2)?" SELECTED":"").">D&eacute;bris</option>";
+	$page .= '<option value="1"'.(($c[4]==1)?" SELECTED":"").">Planète</option>";
+	$page .= '<option value="2"'.(($c[4]==2)?" SELECTED":"").">Débris</option>";
 	$page .= "</select>
 	</th></tr><tr>
 	<th><input type=\"reset\" value=\"Zur&uuml;cksetzen\"> <input type=\"submit\" value=\"Enregistrer\">";
@@ -75,7 +75,7 @@ elseif(isset($_GET['a'])){
 			$scarray[$a] = implode(",",$r);
 			$user['fleet_shortcut'] =  implode("\r\n",$scarray);
 			doquery("UPDATE {{table}} SET fleet_shortcut='{$user[fleet_shortcut]}' WHERE id={$user[id]}","users");
-			message("Le raccourcis a &eacute;t&eacute; &eacute;dit&eacute; !.","Editer","". INDEX_BASE ."raccourci");
+			message("Le raccourcis a été édité !.","Editer","". INDEX_BASE ."raccourci");
 		}
 	}
 	if($user['fleet_shortcut']){
@@ -95,14 +95,14 @@ elseif(isset($_GET['a'])){
 		<input type=text name=s value=\"{$c[2]}\" size=3 maxlength=3>
 		<input type=text name=p value=\"{$c[3]}\" size=3 maxlength=3>
 		 <select name=t>";
-		$page .= '<option value="1"'.(($c[4]==1)?" SELECTED":"").">Plan&egrave;te</option>";
-		$page .= '<option value="2"'.(($c[4]==2)?" SELECTED":"").">D&eacute;bris</option>";
+		$page .= '<option value="1"'.(($c[4]==1)?" SELECTED":"").">Planète</option>";
+		$page .= '<option value="2"'.(($c[4]==2)?" SELECTED":"").">Débris</option>";
 		$page .= "</select>
 		</th></tr><tr>
 		<th><input type=reset value=\"Reset\"> <input type=submit value=\"Enregistrer\"> <input type=submit name=delete value=\"Supprimer\">";
 		$page .= "</th></tr>";
 
-	}else{$page .= message("Le raccourcis a &eacute;t&eacute; enregistr&eacute; !","Enregistrer","". INDEX_BASE ."raccourci");}
+	}else{$page .= message("Le raccourcis a été enregistré !","Enregistrer","". INDEX_BASE ."raccourci");}
 
 	$page .= '<tr><td colspan=2 class=c><a href="'. INDEX_BASE .'raccourci">Retour</a></td></tr></tr></table></form>';
 

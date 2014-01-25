@@ -32,7 +32,7 @@ $allyrow = doquery("SELECT ally_name,ally_tag,ally_description,ally_web,ally_ima
 			// ->select()
 			// ->fetch();
 
-if(!$allyrow){ message("Alliance non trouv&eacute;e","Erreur");}
+if(!$allyrow){ message("Alliance non trouvée","Erreur");}
 
 $count = doquery("SELECT COUNT(DISTINCT(id)) FROM {{table}} WHERE ally_id=".$_GET["a"].";","users",true);
 // $count = $db->query("SELECT COUNT(DISTINCT(id)) FROM {{table}} WHERE ally_id=:id")

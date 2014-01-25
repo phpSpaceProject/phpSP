@@ -35,11 +35,11 @@
 			<tr>
 				<td align="center">&nbsp;</td>
 				<td align="center"><h2>Attaquant</h2></td>
-				<td align="center"><h2>D&eacute;fenseur</h2></td>
+				<td align="center"><h2>Défenseur</h2></td>
 			</tr>
 			<tr>
 				<td align="center">&nbsp;</td>
-				<td align="center"> Puissance de la flotte &agrave;
+				<td align="center"> Puissance de la flotte à
 					<select name="pourc_att" id="pourc_att">
 						<option value="10">10%</option> 
 						<option value="20">20%</option> 
@@ -59,7 +59,7 @@
 						<option value="160">160%</option> 									
 					</select>
 				</td>
-				<td align="center"> Puissance de la flotte &agrave;
+				<td align="center"> Puissance de la flotte à
 					<select name="pourc_def" id="pourc_def">
 						<option value="10">10%</option> 
 						<option value="20">20%</option> 
@@ -103,7 +103,7 @@
 				<td colspan="3">Ressources</td>
 			</tr>
 			<tr>
-				<th>M&eacute;tal</th>
+				<th>Métal</th>
 				<th>&nbsp;</th>
 				<th><input type='text' id='sim_metal' name='metal' value="0"></th>
 			</tr>
@@ -113,7 +113,7 @@
 				<th><input type='text' id='sim_crystal' name='crystal' value="0"></th>
 			</tr>
 			<tr>
-				<th>Deut&eacute;rium</th>
+				<th>Deutérium</th>
 				<th>&nbsp;</th>
 				<th><input type='text' id='sim_deuterium' name='deuterium' value="0"></th>
 			</tr>
@@ -122,8 +122,8 @@
 			</tr>
 			<tr>
 				<th>&nbsp;</th>
-				<th><input type="button" class="submit2" value="R&eacute;initialiser" onclick="clear_att();" /></th>
-				<th><input type="button" class="submit2" value="R&eacute;initialiser" onclick="clear_def();" /></th>
+				<th><input type="button" class="submit2" value="Réinitialiser" onclick="clear_att();" /></th>
+				<th><input type="button" class="submit2" value="Réinitialiser" onclick="clear_def();" /></th>
 			</tr>
 			<tr>
 				<th colspan='3'><input type='submit' class="submit" name='submit' value="Simuler le combat"></th>

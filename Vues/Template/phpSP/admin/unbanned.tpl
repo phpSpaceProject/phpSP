@@ -1,10 +1,10 @@
 <br><br>
-<h2>D&eacute;bannir un joueur </h2>
+<h2>Débannir un joueur </h2>
 <form action="unbanned.php?mode=change" method="post">
 <table width="409" style="color:#FFFFFF">
 <tbody>
 <tr>
-	<td class="c" colspan="2">Joueur &agrave; d&eacute;bannir</td>
+	<td class="c" colspan="2">Joueur à débannir</td>
 </tr>
 <tr>
 	<th width="129">{Name}</th>
@@ -12,7 +12,7 @@
 </th>
 </tr>
 <tr>
-	<th colspan="2"><input value="D&eacute;bannir" type="submit"></th>
+	<th colspan="2"><input value="Débannir" type="submit"></th>
 </tr>
 <tr>
 </tr>

@@ -223,7 +223,7 @@ $Message = trim ( nl2br ( strip_tags ( $_POST['text'], '<br>' ) ) ); }
 						$page .= "</th>";
 					}
 					$page .= "</tr><tr>";
-					if($CurMess['message_from']=="Contr&ocirc;le a&eacute;rospatial")
+					if($CurMess['message_from']=="Contr&ocirc;le aérospatial")
 						{
 							$border = "#6c0000";
 						}
@@ -252,7 +252,7 @@ $Message = trim ( nl2br ( strip_tags ( $_POST['text'], '<br>' ) ) ); }
 						$page .= "<th>". date("m-d H:i:s O", $CurMess['message_time']) ."</th>";
 						$page .= "<th>". $CurMess['message_from'] ."</th>";
 						$page .= "<th>". $CurMess['message_subject'] ." ";
-						if($CurMess['message_from']=="Contr&ocirc;le a&eacute;rospatial")
+						if($CurMess['message_from']=="Contr&ocirc;le aérospatial")
 						{
 							$border = "#6c0000";
 						}

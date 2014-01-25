@@ -34,8 +34,8 @@
 		$Page .= "<body>";
 		if (($raportrow["id_owner1"] == $user["id"]) and
 			($raportrow["a_zestrzelona"] == 1)) {
-			$Page .= "Le contact avec la flotte attaquante a &eacute;t&eacute; perdue.<br>";
-			$Page .= "(En d'autres termes, elle a &eacute;t&eacute; abattu au premier tour .)";
+			$Page .= "Le contact avec la flotte attaquante a été perdue.<br>";
+			$Page .= "(En d'autres termes, elle a été abattu au premier tour .)";
 		} else {
 			$Page .= "". stripslashes( $raportrow["raport"] ) ."";
 		}

@@ -112,7 +112,7 @@ if ($user['authlevel'] >= 3) {
 
             if(mail($data['email'], nl2br(stripslashes($_POST['titre'])), $message, $headers))
             {
-                $parse['email_adress'] .= '<p>' . $data['email'] . '  :::::  ' . $data['username'] . '  :::::  <font color="darkgreen"><b>R&eacute;ussi</b></font>';
+                $parse['email_adress'] .= '<p>' . $data['email'] . '  :::::  ' . $data['username'] . '  :::::  <font color="darkgreen"><b>Réussi</b></font>';
             }
             else
             {

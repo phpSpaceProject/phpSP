@@ -7,10 +7,10 @@
 <tr>
 	<th>ID</th>
 	<th>Nom de la lune</th>
-	<th>Plan&egrave;te m&egrave;re</th>
+	<th>Planète mère</th>
 	<th>Galaxie</th>
-	<th>Syst&egrave;me</th>
-	<th>Plan&egrave;te</th>
+	<th>Système</th>
+	<th>Planète</th>
 </tr>
 {moon}
 </table>

@@ -41,7 +41,7 @@ function MissionCaseAttack ($FleetRow)
 					  
 							// si il a atteint la limit et que le les 24 heure ne se sont pas encore ecoulé
 							if($select['compteur'] >= MAX_ATTACK and $temp > $time) {
-								SendSimpleMessage ( $FleetRow['fleet_owner'], '0', $FleetRow['fleet_end_time'], 1, 'Contract de paix Uniguerre', $lang['sys_mess_fleetback'], 'Vous avez atteint la limite du nombre maximum d\'attaque envers un m&ecirc;me joueur ! C\'est-&agrave;-dire '.MAX_ATTACK.' attaques/joueur.');
+								SendSimpleMessage ( $FleetRow['fleet_owner'], '0', $FleetRow['fleet_end_time'], 1, 'Contract de paix Uniguerre', $lang['sys_mess_fleetback'], 'Vous avez atteint la limite du nombre maximum d\'attaque envers un même joueur ! C\'est-à-dire '.MAX_ATTACK.' attaques/joueur.');
 								doquery("UPDATE {{table}} SET `fleet_mess`='1' , `fleet_check`='1'  WHERE `fleet_id`='".$FleetRow['fleet_id']."'",'fleets');
 							// si il a atteint la limit mais que le les 24 heure sont plus inferieur ou egale au temps actuel	
 							} elseif($select['compteur'] >= MAX_ATTACK and $temp <= $time) {

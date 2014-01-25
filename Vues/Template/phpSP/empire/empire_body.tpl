@@ -6,7 +6,7 @@
 	</tr>
 	
 	<tr>
-		<td class="c" colspan="3">Cliquez sur le nom de la plan&egrave;te pour avoir plus d'informations</td>
+		<td class="c" colspan="3">Cliquez sur le nom de la planète pour avoir plus d'informations</td>
 	</tr>
 </table>
 

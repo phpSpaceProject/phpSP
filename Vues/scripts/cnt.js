@@ -9,7 +9,7 @@ function t() {
 	m  = 0;
 	h  = 0;
 	if ( s < 0 ) {
-		btc.innerHTML = "Termin&eacute;<br>" + "<a href=?cp=" + pl + ">Continuer</a>"
+		btc.innerHTML = "Terminé<br>" + "<a href=?cp=" + pl + ">Continuer</a>"
 	} else {
 		if ( s > 59 ) {
 		m = Math.floor( s / 60 );

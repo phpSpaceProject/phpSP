@@ -32,11 +32,11 @@ $parse['error'] = "<span style='color:red;'>Vous n'avez pas la technologie requi
 $histoire = "<div style='width:100%;height:200px;overflow-Y:auto;'><table width=100%>
 	<tr><td class='c' colspan=6>Historique</td></tr>
 					<tr>
-					<th>Coordonn&eacute;e de d&eacute;part</th>
+					<th>Coordonnée de départ</th>
 					<th>M&eacutetal</th>
 					<th>Cristal</th>
-					<th>Deut&eacute;rium</th>
-					<th>Coordonn&eacute;e d'arriv&egrave;</th>
+					<th>Deutérium</th>
+					<th>Coordonnée d'arrivè</th>
 					<th>Date de transfert</th>
 				</tr>";
 	while ($HistorikPlanet = mysql_fetch_array($Yourhistorique))
@@ -99,14 +99,14 @@ elseif($planetrow['verif_telep'] == 1 and time() >= $planetrow['temp_telep'])
 else
 {
 	$parse['planetlist'] .= '<td class="l">';
-	$parse['title_tele'] = '<tr><td class="c">Coordonn&eacute;es</td><td class="c">Ressources</td></tr>';
+	$parse['title_tele'] = '<tr><td class="c">Coordonnées</td><td class="c">Ressources</td></tr>';
 
 	$ThisUsersPlanets    = SortUserPlanets ( $user );
 	while ($CurPlanet = mysql_fetch_array($ThisUsersPlanets))
 	{
 			if($CurPlanet["id"] != $planetrow['id'])
 			{
-				// Nom et coordonn�es de la planete
+				// Nom et coordonn�es de la planete
 				$parse['planetlist'] .= "".$CurPlanet['name'];
 				$parse['planetlist'] .= "&nbsp;[".$CurPlanet['galaxy'].":";
 				$parse['planetlist'] .= "".$CurPlanet['system'].":";
@@ -140,7 +140,7 @@ else
 if(isset($_POST['teleporter']))
 {
 if($user['vote'] < MAX_BONUS_TELEPORTE)
-message("teleportation non effectu&eacute; ,il faut voter plus.","Erreur");
+message("teleportation non effectué ,il faut voter plus.","Erreur");
 
 	$metal=$_POST['resource1'];
 	$cristal=$_POST['resource2'];
@@ -227,11 +227,11 @@ $parse['ressources'] = $page;
 $histoire = "<div style='width:100%;height:200px;overflow-Y:auto;'><table width=100%>
 	<tr><td class='c' colspan=6>Historique</td></tr>
 					<tr>
-					<th>Coordonn&eacute;e de d&eacute;part</th>
-					<th>M&eacute;tal</th>
+					<th>Coordonnée de départ</th>
+					<th>Métal</th>
 					<th>Cristal</th>
-					<th>Deut&eacute;rium</th>
-					<th>Coordonn&eacute;e d'arriv&eacute;</th>
+					<th>Deutérium</th>
+					<th>Coordonnée d'arrivé</th>
 					<th>Date de transfert</th>
 				</tr>";
 	while ($HistorikPlanet = mysql_fetch_array($Yourhistorique))

@@ -93,15 +93,15 @@ $time = time();
 // 24 heure !
 $temp = $select['temp'] + TIME_LONG_ATTACK_BLOCKED;
 if (($select['compteur']+$nombredattaque) >= MAX_ATTACK and $temp > time()) {
-    message("Vous avez atteint la limite du nombre maximum d'attaque envers 1 m&ecirc;me joueur ! C'est-&agrave;-dire " . MAX_ATTACK . " attaques/joueur.", "fleet." . PHPEXT, 2);
+    message("Vous avez atteint la limite du nombre maximum d'attaque envers 1 même joueur ! C'est-à-dire " . MAX_ATTACK . " attaques/joueur.", "fleet." . PHPEXT, 2);
 }
 
 if ($select['compteur'] >= MAX_ATTACK and $temp > time()) {
-    message("Vous avez atteint la limite du nombre maximum d'attaque envers 1 m&ecirc;me joueur ! C'est-&agrave;-dire " . MAX_ATTACK . " attaques/joueur.", "fleet." . PHPEXT, 2);
+    message("Vous avez atteint la limite du nombre maximum d'attaque envers 1 même joueur ! C'est-à-dire " . MAX_ATTACK . " attaques/joueur.", "fleet." . PHPEXT, 2);
 }
 
 if ($select['compteur'] >= MAX_ATTACK and $temp > time()) {
-    message("Vous avez atteint la limite du nombre maximum d'attaque envers 1 m&ecirc;me joueur ! C'est-&agrave;-dire " . MAX_ATTACK . " attaques/joueur.", "fleet." . PHPEXT, 2);
+    message("Vous avez atteint la limite du nombre maximum d'attaque envers 1 même joueur ! C'est-à-dire " . MAX_ATTACK . " attaques/joueur.", "fleet." . PHPEXT, 2);
 }
 
 if ($planettype != 1 && $planettype != 2 && $planettype != 3) {

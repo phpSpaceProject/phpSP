@@ -2,7 +2,7 @@
 <form method="post" action="">
 <table width="100%">
 <tr>
-	<td class="c" colspan=2><center>T&eacute;l&eacute;portation</center></td>
+	<td class="c" colspan=2><center>Téléportation</center></td>
 </tr>
 {waiting_tele}
 {title_tele}

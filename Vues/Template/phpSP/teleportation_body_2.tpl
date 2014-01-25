@@ -3,17 +3,17 @@
 <form method="post" action="">
 <table width="100%">
 <tr>
-	<td class="c" colspan=2><center>T&eacute;l&eacute;portation</center></td>
+	<td class="c" colspan=2><center>Téléportation</center></td>
 </tr>
 <tr>
 	<th colspan=2>Historiques</th>
 </tr>
 <tr>
-	<td class="c">Coordonn&eacute;es</td>
+	<td class="c">Coordonnées</td>
 	<td class="c">Ressources</td>
 </tr>
 <tr>
-	<td class="l">Coordonn&eacute;es</td>
+	<td class="l">Coordonnées</td>
 	<td class="l">Ressources</td>
 </tr>
 <tr>

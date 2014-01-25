@@ -32,9 +32,9 @@
 			$nam = $_POST['nam'];
 			doquery("DELETE FROM {{table}} WHERE who2='{$nam}'", 'banned');
 			doquery("UPDATE {{table}} SET bana=0, banaday=0 WHERE username='{$nam}'", "users");
-			message("Le joueur {$nam} a bien &eacute;t&eacute; d&eacute;banni!", 'Information');
+			message("Le joueur {$nam} a bien été débanni!", 'Information');
 		}
-			//si le mode frame est activ� alors
+			//si le mode frame est activ� alors
 			display(parsetemplate(gettemplate('admin/unbanned'), $parse), $title,true);
 		} else {
 		message( $lang['sys_noalloaw'], $lang['sys_noaccess'] );

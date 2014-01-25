@@ -450,7 +450,7 @@ $lang['link'] = INDEX_BASE;
 		$lang['ally_request_notallow_0'] = (($ally['ally_request_notallow'] == 1) ? ' SELECTED' : '');
 		$lang['ally_request_notallow_1'] = (($ally['ally_request_notallow'] == 0) ? ' SELECTED' : '');
 		$lang['ally_owner_range'] = $ally['ally_owner_range'];
-		$lang['Transfer_alliance'] = MessageForm("Abandonner / Transf&eacute;rer L'alliance", "", "?mode=admin&edit=give", $lang['Continue']);
+		$lang['Transfer_alliance'] = MessageForm("Abandonner / Transférer L'alliance", "", "?mode=admin&edit=give", $lang['Continue']);
 		$lang['Disolve_alliance'] = MessageForm("Dissoudre L'alliance", "", "?mode=admin&edit=exit", $lang['Continue']);
 
 		$page .= parsetemplate(gettemplate('alliance_admin'), $lang);

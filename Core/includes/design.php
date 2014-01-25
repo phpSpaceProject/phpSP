@@ -432,7 +432,7 @@ function getTemplate($templateName) {
  * @param string $extension
  * @return void
  */
-function includeLang($filename, $extension = '.mo')
+function includeLang($filename, $extension = '.php')
 {
     global $lang, $user;
 
@@ -451,6 +451,6 @@ function includeLang($filename, $extension = '.mo')
         }
     }
 
-    require_once sprintf($pathPattern, DEFAULT_LANG, '.mo');
+    require_once sprintf($pathPattern, DEFAULT_LANG, $extension);
     return;
 }

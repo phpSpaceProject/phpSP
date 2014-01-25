@@ -39,13 +39,13 @@ function SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno)
 	$totaltime = ($endtime - $starttime);
 	// Ce qu'il reste de l'attaquant
 	$CurrentSet = $walka["attaquant"];
-	// Ce qu'il reste de l'attaquÈ
+	// Ce qu'il reste de l'attaquÔøΩ
 	$TargetSet = $walka["defenseur"];
 	// Le resultat de la bataille
 	$FleetResult = $walka["wygrana"];
-	// Rapport long (rapport de bataille detaillÈ)
+	// Rapport long (rapport de bataille detaillÔøΩ)
 	$dane_do_rw = $walka["dane_do_rw"];
-	// Rapport court (cdr + unitÈes perdues)
+	// Rapport court (cdr + unitÔøΩes perdues)
 	$zlom = $walka["zlom"];
 
 	$FleetArray = "";
@@ -57,7 +57,7 @@ function SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno)
 		$FleetAmount += $Count['count'];
 	}
 
-	// Determination des ressources pillÈes
+	// Determination des ressources pillÔøΩes
 	$Mining['metal'] = 0;
 	$Mining['crystal'] = 0;
 	$Mining['deuter'] = 0;
@@ -97,7 +97,7 @@ function SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno)
 	$Mining['crystal'] = round($Mining['crystal']);
 	$Mining['deuter'] = round($Mining['deuter']);
    
-	// L‡ on va discuter le bout de gras pour voir s'il y a moyen d'avoir une Lune !
+	// LÔøΩ on va discuter le bout de gras pour voir s'il y a moyen d'avoir une Lune !
 	$FleetDebris = $zlom['metal'] + $zlom['crystal'];
 	$StrAttackerUnits = sprintf ($lang['sys_attacker_lostunits'], pretty_number ($zlom["attaquant"]));
 	$StrDefenderUnits = sprintf ($lang['sys_defender_lostunits'], pretty_number ($zlom["defenseur"]));
@@ -118,7 +118,7 @@ function SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno)
 	$DefendTechon['A'] = $TargetTechno["military_tech"] * 10;
 	$DefendTechon['B'] = $TargetTechno["defence_tech"] * 10;
 	$DefendTechon['C'] = $TargetTechno["shield_tech"] * 10;
-	$DefenderData = "D&eacute;fenseur";
+	$DefenderData = "D√©fenseur";
 	$DefenderTech = sprintf ($lang['sys_attack_techologies'], $DefendTechon['A'], $DefendTechon['B'], $DefendTechon['C']);
 
 	foreach($dane_do_rw as $a => $b) {
@@ -196,22 +196,22 @@ function SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno)
 			$Pillage = sprintf ($lang['sys_stealed_ressources'], pretty_number ($Mining['metal']), $lang['metal'], pretty_number ($Mining['crystal']), $lang['crystal'], pretty_number ($Mining['deuter']), $lang['Deuterium']);
 			$raport .= $lang['sys_attacker_won'] . "<br />" . $Pillage . "<br />";
 			$raport .= $DebrisField." <br /><br />";
-			$raport .= "Version Simul&eacute;e<br />";
+			$raport .= "Version Simul√©e<br />";
 			break;
 		case "r":
 			$raport .= $lang['sys_both_won'] . "<br />";
 			$raport .= $DebrisField." <br /><br />";
-			$raport .= "Version Simul&eacute;e<br />";
+			$raport .= "Version Simul√©e<br />";
 			break;
 		case "w":
 			$raport .= $lang['sys_defender_won'] . "<br />";
 			$raport .= $DebrisField." <br /><br />";
-			$raport .= "Version Simul&eacute;e<br />";
+			$raport .= "Version Simul√©e<br />";
 			break;
 		default:
 			break;
 	}
-	$SimMessage = "Simulation de combat r&eacute;alis&eacute; en ".$totaltime."s.";
+	$SimMessage = "Simulation de combat r√©alis√© en ".$totaltime."s.";
 	$raport .= $SimMessage . "</table>";
 	
 	return $raport;
