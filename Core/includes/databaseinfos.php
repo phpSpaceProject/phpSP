@@ -113,17 +113,6 @@
 	$QryTableBuddy      .= "`text` text character set latin1, ";
 	$QryTableBuddy      .= "PRIMARY KEY  (`id`) ";
 	$QryTableBuddy      .= ") ENGINE=MyISAM;";
-
-	// Table Bots
-	$QryTableBots         = "CREATE TABLE `{{table}}` ( ";
-	$QryTableBots        .= "`id` BIGINT( 11 ) NOT NULL auto_increment, ";
-	$QryTableBots        .= "`player` BIGINT( 11 ) NOT NULL , ";
-	$QryTableBots        .= "`last_time` INT( 11 ) NOT NULL,";
-	$QryTableBots        .= "`every_time` INT( 11 ) NOT NULL, ";
-	$QryTableBots        .= "`last_planet` BIGINT( 11 ) NOT NULL ,";
-	$QryTableBots        .= "`type` INT( 11 ) NOT NULL,";
-	$QryTableBots        .= "PRIMARY KEY  (`id`) ";
-	$QryTableBots        .= ") ENGINE=MyISAM;";
 	
 	// Table box(idée)
 	$QryTableBox       = "CREATE TABLE `{{table}}` ( ";
@@ -135,6 +124,7 @@
 	$QryTableBox      .= "`valid`int(1) NOT NULL DEFAULT '0', ";
 	$QryTableBox      .= "PRIMARY KEY  (`id`) ";
 	$QryTableBox      .= ") ENGINE=MyISAM;";
+	
 	
 	// Table box(vote)
 	$QryTableBoxVote       = "CREATE TABLE `{{table}}` ( ";
@@ -225,7 +215,6 @@
 	$QryTabledeclared        .= "`declared_3`TEXT NOT NULL, ";
 	$QryTabledeclared        .= "`reason`TEXT NOT NULL, ";
 	$QryTabledeclared        .= "`declarator_name`TEXT NOT NULL ";
-
 	$QryTabledeclared       .= ") ENGINE=MyISAM;";
 
 	// Table errors
