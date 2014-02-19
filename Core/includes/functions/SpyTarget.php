@@ -52,20 +52,22 @@ $EndElementDefense = end($reslist['defense']);#EndElementDefense
 		$String .= "</tr>";
 		$LookAtLoop = false;
 	} elseif ($Mode == 1) {
-		$ResFrom[0] = $FirstElementFleet[1];
-		$ResTo[0]   = $EndElementFleet;
+		$ResFrom[0] = 200;
+		$ResTo[0]   = 299;
 		$Loops      = 1;
 	} elseif ($Mode == 2) {
-		$ResFrom[0] =  $FirstElementDefense[1];
-		$ResTo[0]   = $EndElementDefense;
+		$ResFrom[0] = 400;
+		$ResTo[0]   = 499;
+		$ResFrom[1] = 500;
+		$ResTo[1]   = 599;
 		$Loops      = 2;
 	} elseif ($Mode == 3) {
-		$ResFrom[0] = $FirstElementBuild[1];
-		$ResTo[0]   = $EndElementBuild;
+		$ResFrom[0] = 1;
+		$ResTo[0]   = 99;
 		$Loops      = 1;
 	} elseif ($Mode == 4) {
-		$ResFrom[0] = $FirstElementTech[1];
-		$ResTo[0]   = $EndElementTech;
+		$ResFrom[0] = 100;
+		$ResTo[0]   = 199;
 		$Loops      = 1;
 	}
 
