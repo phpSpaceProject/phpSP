@@ -1,29 +1,32 @@
 <?php
 /**
- * This file is part of Nacatiks
+ * This file is part of phpSpaceProject
  *
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
+ * @see http://phpsp.fr/
  *
- * Copyright (c) 2012-Present, Nacatiks Support Team <http://www.nacatikx.dafun.com/index.php?page=Accueil>
+ * Copyright (c) 2012-Present, phpSpaceProject Support Team <http://phpsp.fr/board/>
  * All rights reserved.
- *=========================================================
-  _   _          _____       _______ _____ _  __ _____ 
- | \ | |   /\   / ____|   /\|__   __|_   _| |/ // ____|
- |  \| |  /  \ | |       /  \  | |    | | | ' /| (___  
- | . ` | / /\ \| |      / /\ \ | |    | | |  <  \___ \ 
- | |\  |/ ____ \ |____ / ____ \| |   _| |_| . \ ____) |
- |_| \_/_/    \_\_____/_/    \_\_|  |_____|_|\_\_____/      
-
-
- *=========================================================
+ *===================================
+  _____  _    _ _____   _____ _____  
+ |  __ \| |  | |  __ \ / ____|  __ \ 
+ | |__) | |__| | |__) | (___ | |__) |
+ |  ___/|  __  |  ___/ \___ \|  ___/ 
+ | |    | |  | | |     ____) | |     
+ |_|    |_|  |_|_|    |_____/|_|     
+ 
+ *		-- phpSpaceProject --		
+ *===================================
  *
  */
+ 
 $parse = $lang;
 $parse['link'] = INDEX_BASE;
 if ($_POST) 
 {
 
-		
+	$CurrentId['id'] = $user['id'];
+	$TargetId['id'] = intval(substr($_POST['target'], 40, 41));
 	$CurrentSet[$i]['count'] = array();
 	$TargetSet[$i]['count'] = array();
 	$PresenceFlotteCurrent = false;
@@ -59,20 +62,18 @@ if ($_POST)
 			$CurrentTechno = array();
 			$TargetTechno  = array();
 			
-			$PowerAtt = intval($_POST['pourc_att'] / 100);
-			$PowerDef = intval($_POST['pourc_def'] / 100);
+			$PowerAtt = intval(100 / 100);
+			$PowerDef = intval(100 / 100);
 			
-			$CurrentTechno['rpg_amiral']  		= intval($_POST['rpg_amiral_us']);
 			$CurrentTechno['defence_tech'] 		= intval($_POST['defence_tech_us'] 		* $PowerAtt);
 			$CurrentTechno['shield_tech']  		= intval($_POST['shield_tech_us']		* $PowerAtt);
 			$CurrentTechno['military_tech']  	= intval($_POST['military_tech_us']		* $PowerAtt);
 				
-			$TargetTechno['rpg_amiral'] 		= intval($_POST['rpg_amiral_them']);
 			$TargetTechno['defence_tech'] 		= intval($_POST['defence_tech_them']	* $PowerDef);
 			$TargetTechno['shield_tech'] 		= intval($_POST['shield_tech_them']		* $PowerDef);
 			$TargetTechno['military_tech'] 		= intval($_POST['military_tech_them']	* $PowerDef);
 
-			$page = SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno);
+			$page = SimuleCombat($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno,$CurrentId,$TargetId);
 			
 			$menu = false;
 		}else{
@@ -92,7 +93,9 @@ if ($_POST)
 			if(floor($SetItem/100)*100 == $SetItem) $parse['lst_vaisseaux'] .= "<tr><td class=\"c\" colspan=\"3\">".$lang["tech"][$SetItem]."</td></tr>";
 			else {
 				$parse['lst_vaisseaux'] .= "<tr><th>".$lang["tech"][$SetItem]."</th>";
-				if($SetItem < 400)
+				if($SetItem == 212)
+					$parse['lst_vaisseaux'] .= "<th> - </th><th><input type='text' id='fleet_them[".$SetItem."]' name='fleet_them[".$SetItem."]' value='0'></th></tr>";
+				elseif($SetItem < 400)
 					$parse['lst_vaisseaux'] .= "<th><input type='text' id='fleet_us[".$SetItem."]' name='fleet_us[".$SetItem."]' value='0'></th><th><input type='text' id='fleet_them[".$SetItem."]' name='fleet_them[".$SetItem."]' value='0'></th></tr>";
 				else
 					$parse['lst_vaisseaux'] .= "<th>&nbsp;</th><th><input type='text' id='fleet_them[".$SetItem."]' name='fleet_them[".$SetItem."]' value='0'></th></tr>";
@@ -100,6 +103,15 @@ if ($_POST)
 		}
 	}
 
+	$list ="<select name='target'>";
+	$alluser = doquery("SELECT * FROM {{table}} WHERE `authlevel`='0' AND `id`!='".$user['id']."';", 'users');
+	while($ua = mysql_fetch_assoc($alluser))
+	{
+		$list .="<option value='". sha1(uniqid(null, true)) ."" .$ua['id'] ."'>".$ua['username']."</option>";
+	}
+	$list .="</select>";
+	$parse['listuser'] = $list;
+	$parse['ususer'] = $user['username'];
 	$page = parsetemplate(gettemplate('simulateur_body'), $parse);
 	
 	$menu = true;

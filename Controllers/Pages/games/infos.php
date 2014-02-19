@@ -1,23 +1,25 @@
 <?php
 /**
- * This file is part of Nacatiks
+ * This file is part of phpSpaceProject
  *
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
+ * @see http://phpsp.fr/
  *
- * Copyright (c) 2012-Present, Nacatiks Support Team <http://www.nacatikx.dafun.com/index.php?page=Accueil>
+ * Copyright (c) 2012-Present, phpSpaceProject Support Team <http://phpsp.fr/board/>
  * All rights reserved.
- *=========================================================
-  _   _          _____       _______ _____ _  __ _____ 
- | \ | |   /\   / ____|   /\|__   __|_   _| |/ // ____|
- |  \| |  /  \ | |       /  \  | |    | | | ' /| (___  
- | . ` | / /\ \| |      / /\ \ | |    | | |  <  \___ \ 
- | |\  |/ ____ \ |____ / ____ \| |   _| |_| . \ ____) |
- |_| \_/_/    \_\_____/_/    \_\_|  |_____|_|\_\_____/      
-
-
- *=========================================================
+ *===================================
+  _____  _    _ _____   _____ _____  
+ |  __ \| |  | |  __ \ / ____|  __ \ 
+ | |__) | |__| | |__) | (___ | |__) |
+ |  ___/|  __  |  ___/ \___ \|  ___/ 
+ | |    | |  | | |     ____) | |     
+ |_|    |_|  |_|_|    |_____/|_|     
+ 
+ *		-- phpSpaceProject --		
+ *===================================
  *
  */
+
 
 // ----------------------------------------------------------------------------------------------------------
 // Creation de la Liste de flotte disponible sur la lune
@@ -281,8 +283,8 @@ function ShowBuildingInfoPage ($CurrentUser, $CurrentPlanet, $BuildID) {
 		// $QrySelectShip	= "SELECT * FROM {{table}} WHERE id_user='".$CurrentUser['id']."' AND id_ship='".$BuildID."';";
 		// $ShipList       = doquery ( $QrySelectShip, 'ship_user',true);
 		$parse['element_typ'] = $lang['tech'][200];
-		//$parse['rf_info_to']  = ShowRapidFireTo ($BuildID);   // Rapid Fire vers
-		//$parse['rf_info_fr']  = ShowRapidFireFrom ($BuildID); // Rapid Fire de
+		$parse['rf_info_to']  = ShowRapidFireTo ($BuildID);   // Rapid Fire vers
+		$parse['rf_info_fr']  = ShowRapidFireFrom ($BuildID); // Rapid Fire de
 		$parse['hull_pt']     = "".pretty_number ($pricelist[$BuildID]['metal'] + $pricelist[$BuildID]['crystal']).""; // Points de Structure
 		$parse['shield_pt']   = "<a title='puissance du bouclier actuel:(".pretty_number ($CombatCaps[$BuildID]['shield'] * (1 + (0.1 * ($CurrentUser["shield_tech"])))).")'>".pretty_number ($CombatCaps[$BuildID]['shield'])."</a>";  // Points de Bouclier
 		$parse['attack_pt']   = "<a title='puissance de l armement actuel:(".pretty_number ($CombatCaps[$BuildID]['attack'] * (1 + (0.1 * ($CurrentUser["shield_tech"])))).")'>".pretty_number ($CombatCaps[$BuildID]['attack'])."</a>";  // Points d'Attaque
