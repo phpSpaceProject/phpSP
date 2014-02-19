@@ -37,7 +37,7 @@
 	$QryTableAks        .= "`galaxy` int(2) default NULL, ";
 	$QryTableAks        .= "`system` int(4) default NULL, ";
 	$QryTableAks        .= "`planet` int(2) default NULL, ";
-	$QryTableAks        .= "`eingeladen` int(11) default NULL, ";
+	$QryTableAks        .= "`eingeladen` text default NULL, ";
 	$QryTableAks        .= "PRIMARY KEY  (`id`) ";
 	$QryTableAks        .= ") ENGINE=MyISAM;";
 	
@@ -513,19 +513,6 @@
   $QryTablePlanets    .= "`destructor` bigint(11) NOT NULL DEFAULT '0',";
   $QryTablePlanets    .= "`dearth_star` bigint(11) NOT NULL DEFAULT '0',";
   $QryTablePlanets    .= "`battleship` bigint(11) NOT NULL DEFAULT '0',";
-  /***************************** OBJETS ************************************/
-  $QryTablePlanets    .= "`onecase` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`twocases` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`fivecases` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`tencases` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`twentycases` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`light_blaster` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`heavy_blaster` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`canon_ions` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`canon_busters` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`react_combus` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`react_impuls` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`react_hyper` bigint(11) NOT NULL DEFAULT '0',";
   /***************************** DEFENSES ************************************/
   $QryTablePlanets    .= "`misil_launcher` bigint(11) NOT NULL DEFAULT '0',";
   $QryTablePlanets    .= "`small_laser` bigint(11) NOT NULL DEFAULT '0',";
@@ -533,9 +520,8 @@
   $QryTablePlanets    .= "`gauss_canyon` bigint(11) NOT NULL DEFAULT '0',";
   $QryTablePlanets    .= "`ionic_canyon` bigint(11) NOT NULL DEFAULT '0',";
   $QryTablePlanets    .= "`buster_canyon` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`canon_cata` bigint(11) NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`small_protection_shield` enum('0','1') NOT NULL DEFAULT '0',";
-  $QryTablePlanets    .= "`big_protection_shield` enum('0','1') NOT NULL DEFAULT '0',";
+  $QryTablePlanets    .= "`small_protection_shield` bigint(11) NOT NULL DEFAULT '0',";
+  $QryTablePlanets    .= "`big_protection_shield` bigint(11) NOT NULL DEFAULT '0',";
   /***************************** DIVERS ************************************/
   $QryTablePlanets    .= "`metal_mine_porcent` int(11) NOT NULL DEFAULT '10',";
   $QryTablePlanets    .= "`crystal_mine_porcent` int(11) NOT NULL DEFAULT '10',";
