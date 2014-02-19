@@ -22,9 +22,10 @@
 
 function MissionCaseAttack ($FleetRow)
 {
-    global $user, $xnova_root_path, $pricelist, $lang, $resource, $CombatCaps;
+    global $user, $xnova_root_path, $pricelist, $lang, $resource;
 
     if ($FleetRow['fleet_start_time'] <= time()) {
+
 				if($FleetRow['fleet_check'] == 0) {
 					$select = doquery("SELECT * FROM {{table}} WHERE `attaquant`='".$FleetRow['fleet_owner']."' AND `defenseur`='".$FleetRow['fleet_target_owner']."' LIMIT 1",'attack',true);
 					$ActiviteDefenseur = doquery("SELECT `onlinetime` FROM {{table}} WHERE `id`='".$FleetRow['fleet_target_owner']."' LIMIT 1","users",true);
@@ -35,14 +36,11 @@ function MissionCaseAttack ($FleetRow)
 							doquery("INSERT INTO {{table}} SET `attaquant`='".$FleetRow['fleet_owner']."' , `defenseur`='".$FleetRow['fleet_target_owner']."' , `temp`='".time()."' , `compteur`='1'",'attack');
 							doquery("UPDATE {{table}} SET  `fleet_check`='1'  WHERE `fleet_id`='".$FleetRow['fleet_id']."'",'fleets');
 						} else {
-							
 							// 24 heure !
 							$temp = $select['temp'] + 3600 * 24;
-							
-					  
 							// si il a atteint la limit et que le les 24 heure ne se sont pas encore ecoulé
 							if($select['compteur'] >= MAX_ATTACK and $temp > $time) {
-								SendSimpleMessage ( $FleetRow['fleet_owner'], '0', $FleetRow['fleet_end_time'], 1, 'Contract de paix Uniguerre', $lang['sys_mess_fleetback'], 'Vous avez atteint la limite du nombre maximum d\'attaque envers un même joueur ! C\'est-à-dire '.MAX_ATTACK.' attaques/joueur.');
+								SendSimpleMessage ( $FleetRow['fleet_owner'], '0', $FleetRow['fleet_end_time'], 1, 'Contract de paix Uniguerre', $lang['sys_mess_fleetback'], 'Vous avez atteint la limite du nombre maximum d\'attaque envers un m&ecirc;me joueur ! C\'est-&agrave;-dire '.MAX_ATTACK.' attaques/joueur.');
 								doquery("UPDATE {{table}} SET `fleet_mess`='1' , `fleet_check`='1'  WHERE `fleet_id`='".$FleetRow['fleet_id']."'",'fleets');
 							// si il a atteint la limit mais que le les 24 heure sont plus inferieur ou egale au temps actuel	
 							} elseif($select['compteur'] >= MAX_ATTACK and $temp <= $time) {
@@ -61,6 +59,9 @@ function MissionCaseAttack ($FleetRow)
 						doquery("UPDATE {{table}} SET  `fleet_check`='1'  WHERE `fleet_id`='".$FleetRow['fleet_id']."'",'fleets');
 					}
 				}
+		/*
+			Dans tous les cas, la valeur fleet_check doit etre à 1 lorsqu'il y a impact, sinon le vol sera bloqué...
+		*/
 		
         if ($FleetRow['fleet_mess'] == 0) {
             $QryTargetPlanet = "SELECT * FROM {{table}} ";
@@ -107,13 +108,32 @@ function MissionCaseAttack ($FleetRow)
                 }
             }
 
-            $TheFleet = explode(";", $FleetRow['fleet_array']);
-            foreach($TheFleet as $a => $b) {
-                if ($b != '') {
-                    $a = explode(",", $b);
-                    $CurrentSet[$a[0]]['count'] = $a[1];
-                }
-            }
+			# si il y a une attaque groupé mais ne fonctionne pas pour l'instant
+			if ($FleetRow['fleet_group'] != 0)
+			{
+				$acs_madnessred = doquery("SELECT * FROM {{table}} where fleet_group='" . intval($FleetRow['fleet_group']) . "' UNION SELECT * FROM {{table}} where fleet_group='" . intval($FleetRow['fleet_group']) . "'",'fleets');
+					while ($test = mysql_fetch_array($acs_madnessred)) 
+					{
+						$TheFleet = explode(";", $test['fleet_array']);
+						foreach($TheFleet as $a => $b)
+						{
+							if ($b != '') {
+								$a = explode(",", $b);
+								$CurrentSet[$a[0]]['count'] += $a[1];
+							}
+						}
+					}	
+			}
+			else
+			{
+				$TheFleet = explode(";", $FleetRow['fleet_array']);
+				foreach($TheFleet as $a => $b) {
+					if ($b != '') {
+						$a = explode(",", $b);
+						$CurrentSet[$a[0]]['count'] = $a[1];
+					}
+				}
+			}
 
             include_once(INCLUDES . 'ataki.' . PHPEXT);
             // Calcul de la duree de traitement (initialisation)
@@ -121,6 +141,7 @@ function MissionCaseAttack ($FleetRow)
             $mtime = explode(" ", $mtime);
             $mtime = $mtime[1] + $mtime[0];
             $starttime = $mtime;
+
 
             $walka = walka($CurrentSet, $TargetSet, $CurrentTechno, $TargetTechno);
             // Calcul de la duree de traitement (calcul)
@@ -225,7 +246,34 @@ function MissionCaseAttack ($FleetRow)
             $StrDefenderUnits = sprintf ($lang['sys_defender_lostunits'], pretty_number ($zlom["wrog"]));
             $StrRuins = sprintf ($lang['sys_gcdrunits'], pretty_number ($zlom["metal"]), $lang['Metal'], pretty_number ($zlom['crystal']), $lang['Crystal']);
             $DebrisField = $StrAttackerUnits . "<br />" . $StrDefenderUnits . "<br />" . $StrRuins;
+			// les points pertes sont ajouté.
+			$PtsPerte = $zlom["wrog"] - $zlom["atakujacy"];
+            $QryUpdateUserPertes = "UPDATE {{table}} SET ";
+            $QryUpdateUserPertes .= "`p_infligees` =`p_infligees` + '".$PtsPerte."' ";
+            $QryUpdateUserPertes .= "WHERE id = '" . $FleetRow['fleet_owner'] . "' ";
+            $QryUpdateUserPertes .= "LIMIT 1 ;";
+            doquery($QryUpdateUserPertes, 'users');
+			/* systeme de lune enlever pour l'instant */
+			/*
+            $MoonChance = $FleetDebris / 100000;
+            if ($FleetDebris > 2000000) {
+                $MoonChance = 20;
+            }
+            if ($FleetDebris < 100000) {
+                $UserChance = 0;
+                $ChanceMoon = "";
+            } elseif ($FleetDebris >= 100000) {
+                $UserChance = mt_rand(1, 100);
+                $ChanceMoon = sprintf ($lang['sys_moonproba'], $MoonChance);
+            }
 
+            if (($UserChance > 0) and ($UserChance <= $MoonChance) and $galenemyrow['id_luna'] == 0) {
+                $TargetPlanetName = CreateOneMoonRecord ($FleetRow['fleet_end_galaxy'], $FleetRow['fleet_end_system'], $FleetRow['fleet_end_planet'], $TargetUserID, $FleetRow['fleet_start_time'], '', $MoonChance);
+                $GottenMoon = sprintf ($lang['sys_moonbuilt'], $TargetPlanetName, $FleetRow['fleet_end_galaxy'], $FleetRow['fleet_end_system'], $FleetRow['fleet_end_planet']);
+            } elseif ($UserChance = 0 or $UserChance > $MoonChance) {
+                $GottenMoon = "";
+            }
+			*/
             $AttackDate = date("r", $FleetRow["fleet_start_time"]);
             $title = sprintf ($lang['sys_attack_title'], $AttackDate);
             $raport = "<center><table><tr><td>" . $title . "<br />";
@@ -314,20 +362,20 @@ function MissionCaseAttack ($FleetRow)
                 }
             }
             switch ($FleetResult) {
-                case "a":#gagner
+                case "a": # l'attaquant gagne
                     $Pillage = sprintf ($lang['sys_stealed_ressources'], pretty_number ($Mining['metal']), $lang['metal'], pretty_number ($Mining['crystal']), $lang['crystal'], pretty_number ($Mining['deuter']), $lang['Deuterium']);
                     $raport .= $lang['sys_attacker_won'] . "<br />" . $Pillage . "<br />";
                     $raport .= $DebrisField . "<br />";
                     $raport .= $ChanceMoon . "<br />";
                     $raport .= $GottenMoon . "<br />";
                     break;
-                case "r":#match nul
+                case "r": # match nul
                     $raport .= $lang['sys_both_won'] . "<br />";
                     $raport .= $DebrisField . "<br />";
                     $raport .= $ChanceMoon . "<br />";
                     $raport .= $GottenMoon . "<br />";
                     break;
-                case "w":#perdu
+                case "w": # le defenseur gagne
                     $raport .= $lang['sys_defender_won'] . "<br />";
                     $raport .= $DebrisField . "<br />";
                     $raport .= $ChanceMoon . "<br />";
@@ -381,7 +429,19 @@ function MissionCaseAttack ($FleetRow)
             $QryUpdateFleet .= "LIMIT 1 ;";
             doquery($QryUpdateFleet , 'fleets');
 
-            SendSimpleMessage ($CurrentUserID, '0', $FleetRow['fleet_start_time'], 3, $lang['sys_mess_tower'], $lang['sys_mess_attack_report'], $raport);
+			# si il y a une attaque groupé mais ne fonctionne pas pour l'instant
+			if($FleetRow['fleet_group'] != 0)
+			{
+				$acs_madnessred = doquery("SELECT * FROM {{table}} where fleet_group='" . intval($FleetRow['fleet_group']) . "' UNION SELECT * FROM {{table}} where fleet_group='" . intval($FleetRow['fleet_group']) . "'",'fleets');
+					while ($test = mysql_fetch_array($acs_madnessred)) 
+					{
+						SendSimpleMessage ($test['fleet_owner'], '0', $FleetRow['fleet_start_time'], 3, $lang['sys_mess_tower'], $lang['sys_mess_attack_report'], $raport);
+					}
+			}
+			else
+			{
+				SendSimpleMessage ($CurrentUserID, '0', $FleetRow['fleet_start_time'], 3, $lang['sys_mess_tower'], $lang['sys_mess_attack_report'], $raport);
+			}
             // Ajout du petit point raideur
             $AddPoint = $CurrentUser['xpraid'] + 1;
 
@@ -392,7 +452,7 @@ function MissionCaseAttack ($FleetRow)
             doquery($QryUpdateOfficier, 'users');
             // Ajout d'un point au compteur de raids
             $RaidsTotal = $CurrentUser['raids'] + 1;
-            if ($FleetResult == "a") //gagner
+            if ($FleetResult == "a") # l'attaquant gagne
 			{
                 $RaidsWin = $CurrentUser['raidswin'] + 1;
                 $QryUpdateRaidsCompteur = "UPDATE {{table}} SET ";
@@ -402,7 +462,7 @@ function MissionCaseAttack ($FleetRow)
                 $QryUpdateRaidsCompteur .= "LIMIT 1 ;";
                 doquery($QryUpdateRaidsCompteur, 'users');
             } 
-			elseif ($FleetResult == "r") //match nul
+			elseif ($FleetResult == "r") # match nul
 			{
                 $RaidsLoose = $CurrentUser['raidsloose'] + 1;
                 $QryUpdateRaidsCompteur = "UPDATE {{table}} SET ";
@@ -412,7 +472,7 @@ function MissionCaseAttack ($FleetRow)
                 $QryUpdateRaidsCompteur .= "LIMIT 1 ;";
                 doquery($QryUpdateRaidsCompteur, 'users');
             }
-			elseif ($FleetResult == "w") //perdu
+			elseif ($FleetResult == "w") # le defenseur gagne
 			{
                 $RaidsLoose = $CurrentUser['raidsloose'] + 1;
                 $QryUpdateRaidsCompteur = "UPDATE {{table}} SET ";
@@ -422,7 +482,7 @@ function MissionCaseAttack ($FleetRow)
                 $QryUpdateRaidsCompteur .= "LIMIT 1 ;";
                 doquery($QryUpdateRaidsCompteur, 'users');
             }
-            // Colorisation du résumé de rapport pour le defenseur
+            // Colorisation du résumé de rapport pour l'attaquant
             $raport2 = "<a href # OnClick=\"f( '". INDEX_BASE ."combat&raport=" . $rid . "', '');\" >";
             $raport2 .= "<center>";
             if ($FleetResult == "a") {
